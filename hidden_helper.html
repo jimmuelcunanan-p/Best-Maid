@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Maids In Public Directory | Maid Agency Account Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Public_Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-container": "#006017",
+                        "secondary-container": "#ffdfa0",
+                        "on-primary-fixed": "#004b10",
+                        "inverse-surface": "#0d0f0e",
+                        "on-tertiary-container": "#5e602c",
+                        "on-primary": "#eaffe2",
+                        "background": "#f9f9f7",
+                        "on-secondary-container": "#694d00",
+                        "error-container": "#fd795a",
+                        "tertiary-fixed": "#f9fbb7",
+                        "error-dim": "#791903",
+                        "inverse-on-surface": "#9c9d9b",
+                        "surface-container-high": "#e6e9e6",
+                        "secondary-dim": "#6b4e00",
+                        "primary-dim": "#006118",
+                        "on-background": "#2f3332",
+                        "tertiary": "#60622d",
+                        "surface-container": "#eceeec",
+                        "outline-variant": "#afb3b0",
+                        "primary-container": "#98f994",
+                        "secondary": "#7a5a00",
+                        "on-secondary-fixed-variant": "#765600",
+                        "on-error-container": "#6e1400",
+                        "surface-container-highest": "#e0e3e0",
+                        "primary-fixed": "#98f994",
+                        "surface": "#f9f9f7",
+                        "on-surface-variant": "#5c605e",
+                        "surface-variant": "#e0e3e0",
+                        "surface-tint": "#006f1c",
+                        "surface-container-low": "#f3f4f2",
+                        "primary-fixed-dim": "#8aea87",
+                        "on-tertiary-fixed": "#4c4e1b",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#9bfc96",
+                        "on-secondary": "#fff8f1",
+                        "surface-dim": "#d7dbd8",
+                        "tertiary-dim": "#545622",
+                        "surface-bright": "#f9f9f7",
+                        "outline": "#777c79",
+                        "on-tertiary": "#fbfdb9",
+                        "on-surface": "#2f3332",
+                        "tertiary-container": "#f9fbb7",
+                        "tertiary-fixed-dim": "#eaecaa",
+                        "on-primary-fixed-variant": "#006b1b",
+                        "primary": "#006f1c",
+                        "on-tertiary-fixed-variant": "#696b35",
+                        "on-secondary-fixed": "#523c00",
+                        "error": "#a73b21",
+                        "secondary-fixed-dim": "#ffcd61",
+                        "secondary-fixed": "#ffdfa0",
+                        "on-error": "#fff7f6"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Public Sans"],
+                        "label": ["Public Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Public Sans', sans-serif;
+            background-color: #f9f9f7;
+            color: #2f3332;
+        }
+        .editorial-header {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopAppBar Small (Agency Identity) -->
+<nav class="flex justify-between items-center w-full px-8 py-3 border-b border-[#afb3b0]/15 bg-[#f9f9f7] sticky top-0 z-50">
+<div class="text-lg font-extrabold text-[#2f3332] editorial-header tracking-tight">
+        Maid Agency Account Management
+    </div>
+<div class="flex items-center gap-6">
+<button class="hover:text-[#006f1c] transition-colors flex items-center gap-1 scale-95 active:opacity-80">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</button>
+<button class="hover:text-[#006f1c] transition-colors flex items-center gap-1 scale-95 active:opacity-80">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+</button>
+</div>
+</nav>
+<!-- TopAppBar Centered (Navigation) -->
+<nav class="flex justify-start gap-8 items-center w-full px-8 py-2 overflow-x-auto bg-[#f3f4f2]">
+<a class="text-[#5c605e] pb-1 hover:text-[#7a5a00] transition-all font-medium text-sm" href="#">Home</a>
+<a class="text-[#5c605e] pb-1 hover:text-[#7a5a00] transition-all font-medium text-sm" href="#">Agency Profile</a>
+<a class="text-[#5c605e] pb-1 hover:text-[#7a5a00] transition-all font-medium text-sm" href="#">Create Helper</a>
+<a class="text-[#006f1c] border-b-2 border-[#7a5a00] pb-1 font-medium text-sm" href="#">Modify Helper</a>
+<a class="text-[#5c605e] pb-1 hover:text-[#7a5a00] transition-all font-medium text-sm" href="#">Manage Access</a>
+<a class="text-[#5c605e] pb-1 hover:text-[#7a5a00] transition-all font-medium text-sm" href="#">Enquiry</a>
+</nav>
+<main class="max-w-[1400px] mx-auto px-8 py-10">
+<!-- Editorial Section Title -->
+<header class="mb-12">
+<h1 class="editorial-header text-5xl font-extrabold tracking-tight text-on-background mb-2">Maids In Public</h1>
+<p class="text-on-surface-variant max-w-2xl">Manage your agency's public listings. Search, hide, or remove helper profiles from the public directory.</p>
+</header>
+<!-- Search Functional Area -->
+<section class="bg-surface-container-low rounded-xl p-8 mb-10">
+<div class="flex flex-col md:flex-row gap-4 items-end">
+<div class="flex-1 w-full">
+<label class="block text-label-md font-semibold text-on-surface-variant mb-2 ml-1">Maid name or Code</label>
+<input class="w-full bg-surface-container-highest border-none rounded-md px-4 py-3 focus:ring-2 focus:ring-primary-dim focus:bg-surface-container-lowest transition-all" placeholder="Enter name or reference code..." type="text"/>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-xl font-bold flex items-center gap-2 hover:opacity-90 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="search">search</span>
+                Search Maid in Public
+            </button>
+</div>
+</section>
+<!-- Top Pagination & Stats -->
+<div class="flex justify-between items-center mb-6 px-2">
+<span class="text-sm font-medium text-on-surface-variant">Showing <span class="text-on-surface font-bold">1 - 10</span> of 142 Helpers</span>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-primary text-on-primary font-bold">1</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container hover:bg-surface-container-high transition-colors">2</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container hover:bg-surface-container-high transition-colors">3</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Grid of Maid Profiles (2 columns, 5 rows) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+<!-- Maid Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden group hover:shadow-xl transition-all duration-300 relative border border-outline-variant/10">
+<div class="flex h-full">
+<div class="w-2/5 relative bg-surface-container overflow-hidden">
+<div class="absolute top-3 left-3 z-10">
+<span class="bg-tertiary-container text-on-tertiary-container text-[10px] font-bold px-2 py-1 rounded-lg uppercase tracking-wider">EX MIDDLE EAST</span>
+</div>
+<img alt="Maid Profile" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Portrait of a female domestic helper smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiF6T0cWtwdBmvF8-bIvaWZ_1f5eBXL9VAz_NSHt-Xx47JQhL9j46Nk3eekZqivs49y2qPZ5TNHWzTzeYXEwnT_TskMgNNXElmBApeJSSid9jdzzhd3TGQp1NSFnJSjv1L2lRkUKDBe1jHhomcW3JFS0XqG0NBR_UkMl0ASUs-AKNHNe4-DoEP1PcSudP50Zyb09V9kmh21hvYiVpfOw07Ercze9rI2r3ue4OV3cho9mKtR4xX2PYMRM5ywJxHuk8rYQ7KSHfipwBh"/>
+</div>
+<div class="w-3/5 p-6 flex flex-col justify-between">
+<div>
+<h3 class="font-headline font-bold text-xl text-on-background mb-3">Elena Richards</h3>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Nationality</span>
+<span class="font-semibold text-on-surface">Philippines</span>
+</div>
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Ref Code</span>
+<span class="font-semibold text-on-surface">PH-9921</span>
+</div>
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Last Updated</span>
+<span class="font-semibold text-on-surface italic">12 Oct 2023</span>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/10 pt-4 space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group/check">
+<input class="rounded text-error border-outline-variant focus:ring-error-container w-5 h-5" type="checkbox"/>
+<span class="text-xs font-medium text-on-surface-variant group-hover/check:text-error transition-colors">Select to delete</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/check">
+<input class="rounded text-tertiary border-outline-variant focus:ring-tertiary-container w-5 h-5" type="checkbox"/>
+<span class="text-xs font-medium text-on-surface-variant group-hover/check:text-tertiary transition-colors">Select to hide</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Maid Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden group hover:shadow-xl transition-all duration-300 relative border border-outline-variant/10">
+<div class="flex h-full">
+<div class="w-2/5 relative bg-surface-container overflow-hidden">
+<div class="absolute top-3 left-3 z-10">
+<span class="bg-primary-container text-on-primary-container text-[10px] font-bold px-2 py-1 rounded-lg uppercase tracking-wider">NEW COMER</span>
+</div>
+<img alt="Maid Profile" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Female professional in business attire portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCANGvvxZYA0mI4fEonR7tS0VnhTGJuJ_xRvMrTeNVpquftbFEnIOM_ooxPtZ6eeO9-A_HzEdb5-cQUlvoB0JC54FF2nRkbSi7Qxb9g8HC4LhujNZl3IZxmN3IvfhVHvj_AgDPDD0tJzrtSrWQUnbo9r9_mr5hGQ0_AkfQ8vjV0wbFLH-_QM_qWJy6DVa_srvWhx5pEkYkM6esrCyGNAeL5DV6yLXqRGRZalxhKAyv8TeIow1h3K40Kv9FwLBZNG2YwAoliidco11cA"/>
+</div>
+<div class="w-3/5 p-6 flex flex-col justify-between">
+<div>
+<h3 class="font-headline font-bold text-xl text-on-background mb-3">Siti Aminah</h3>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Nationality</span>
+<span class="font-semibold text-on-surface">Indonesia</span>
+</div>
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Ref Code</span>
+<span class="font-semibold text-on-surface">ID-8842</span>
+</div>
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Last Updated</span>
+<span class="font-semibold text-on-surface italic">05 Nov 2023</span>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/10 pt-4 space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group/check">
+<input class="rounded text-error border-outline-variant w-5 h-5" type="checkbox"/>
+<span class="text-xs font-medium text-on-surface-variant">Select to delete</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/check">
+<input class="rounded text-tertiary border-outline-variant w-5 h-5" type="checkbox"/>
+<span class="text-xs font-medium text-on-surface-variant">Select to hide</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Repeat Cards for 5 rows total -->
+<!-- Row 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden group hover:shadow-xl transition-all duration-300 relative border border-outline-variant/10">
+<div class="flex h-full">
+<div class="w-2/5 relative bg-surface-container overflow-hidden">
+<div class="absolute top-3 left-3 z-10">
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-1 rounded-lg uppercase tracking-wider">EX SINGAPORE</span>
+</div>
+<img alt="Maid Profile" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Portrait of an Asian female worker" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_5Evjz9HmiwThwBu_RVkotv_qcO72nDue4TvAdwe0E51xWv6CPCEMRiXmLa3SBXNYmXQtEJ5LtMALwqX_WXCIoQwq8GcFqfbkgNCzVGTspVYSUmIUadOB9SFYDlov5GgfQXBPTUcJhJoczXkk56Wu4zbxXe7uHUvJ08PXuuSLy2wlgCgp6Isu7NKH6Bwalwz4YOI7j83Gxdyxi_CyigVZGHuDEc1g5k-5AXyC7VmxeiL0Sag3QaF1OkL0R4cs4SfqAcswLDn04r1r"/>
+</div>
+<div class="w-3/5 p-6 flex flex-col justify-between">
+<div>
+<h3 class="font-headline font-bold text-xl text-on-background mb-3">Grace Tan</h3>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Nationality</span>
+<span class="font-semibold text-on-surface">Myanmar</span>
+</div>
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Ref Code</span>
+<span class="font-semibold text-on-surface">MM-2109</span>
+</div>
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Last Updated</span>
+<span class="font-semibold text-on-surface italic">29 Sep 2023</span>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/10 pt-4 space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group/check">
+<input class="rounded text-error border-outline-variant w-5 h-5" type="checkbox"/>
+<span class="text-xs font-medium text-on-surface-variant">Select to delete</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/check">
+<input class="rounded text-tertiary border-outline-variant w-5 h-5" type="checkbox"/>
+<span class="text-xs font-medium text-on-surface-variant">Select to hide</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden group hover:shadow-xl transition-all duration-300 relative border border-outline-variant/10">
+<div class="flex h-full">
+<div class="w-2/5 relative bg-surface-container overflow-hidden">
+<div class="absolute top-3 left-3 z-10">
+<span class="bg-tertiary-container text-on-tertiary-container text-[10px] font-bold px-2 py-1 rounded-lg uppercase tracking-wider">EX HONG KONG</span>
+</div>
+<img alt="Maid Profile" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Confident looking woman in casual attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR0zyi_LDa8nwhVaLVOYKFsPjmtgidGJ9AkvgSb1aOWPoMzvT5zj8cjPjW8Z6Al3ziAdQthUHrzIy1OhfDD59_zuHFuTYa2rk5UEiF7KACAwNrz7n27JcGrf32dGC6OIo2XNhZKmNZADVWblVXba5ttHsnKvfKkm0BQHKxzywfwWYkm2HnhKhCtdHi3spFz6WAauYwpXPqWU3CNtP4CPds8rfVN5JKHHVp4jjQfiRZ1s-2PrCZBS82WV8BJsBZ9X1WqpGzFP7Wo5Ai"/>
+</div>
+<div class="w-3/5 p-6 flex flex-col justify-between">
+<div>
+<h3 class="font-headline font-bold text-xl text-on-background mb-3">Mary Jane Doe</h3>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Nationality</span>
+<span class="font-semibold text-on-surface">Philippines</span>
+</div>
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Ref Code</span>
+<span class="font-semibold text-on-surface">PH-3341</span>
+</div>
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Last Updated</span>
+<span class="font-semibold text-on-surface italic">11 Oct 2023</span>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/10 pt-4 space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group/check">
+<input class="rounded text-error border-outline-variant w-5 h-5" type="checkbox"/>
+<span class="text-xs font-medium text-on-surface-variant">Select to delete</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/check">
+<input class="rounded text-tertiary border-outline-variant w-5 h-5" type="checkbox"/>
+<span class="text-xs font-medium text-on-surface-variant">Select to hide</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden group hover:shadow-xl transition-all duration-300 relative border border-outline-variant/10">
+<div class="flex h-full">
+<div class="w-2/5 relative bg-surface-container overflow-hidden">
+<div class="absolute top-3 left-3 z-10">
+<span class="bg-primary-container text-on-primary-container text-[10px] font-bold px-2 py-1 rounded-lg uppercase tracking-wider">AVAILABLE</span>
+</div>
+<img alt="Maid Profile" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up face of a smiling woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTgs4f0EZFZwGvdBcazOr8MThpDqPTg6StGDcAVt7Uo4WbRuT3sc4OZ0ZFuSh7-cu7Euxk51761uo-YkKIa0nycgLQk9LcqgeZl913qy78bbsNveGU6OvdwI9dtNNjBYNZMBs9W_f__SC3S7W6c_eUh8xS_YQz19OKz_B4ps36F9sIVFq_ogIy3zQKsrcRmqNHDr94xgwnijl8iXR147zgAa7ak3qRWasqOpRFjzcuSVil-cEeaamkGqpM2LQiQp7b9MmhpezQsiBQ"/>
+</div>
+<div class="w-3/5 p-6 flex flex-col justify-between">
+<div>
+<h3 class="font-headline font-bold text-xl text-on-background mb-3">Anjali Sharma</h3>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Nationality</span>
+<span class="font-semibold text-on-surface">India</span>
+</div>
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Ref Code</span>
+<span class="font-semibold text-on-surface">IN-7762</span>
+</div>
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Last Updated</span>
+<span class="font-semibold text-on-surface italic">22 Oct 2023</span>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/10 pt-4 space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group/check">
+<input class="rounded text-error border-outline-variant w-5 h-5" type="checkbox"/>
+<span class="text-xs font-medium text-on-surface-variant">Select to delete</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/check">
+<input class="rounded text-tertiary border-outline-variant w-5 h-5" type="checkbox"/>
+<span class="text-xs font-medium text-on-surface-variant">Select to hide</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden group hover:shadow-xl transition-all duration-300 relative border border-outline-variant/10">
+<div class="flex h-full">
+<div class="w-2/5 relative bg-surface-container overflow-hidden">
+<div class="absolute top-3 left-3 z-10">
+<span class="bg-tertiary-container text-on-tertiary-container text-[10px] font-bold px-2 py-1 rounded-lg uppercase tracking-wider">EX MIDDLE EAST</span>
+</div>
+<img alt="Maid Profile" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Portrait of a female domestic helper smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiF6T0cWtwdBmvF8-bIvaWZ_1f5eBXL9VAz_NSHt-Xx47JQhL9j46Nk3eekZqivs49y2qPZ5TNHWzTzeYXEwnT_TskMgNNXElmBApeJSSid9jdzzhd3TGQp1NSFnJSjv1L2lRkUKDBe1jHhomcW3JFS0XqG0NBR_UkMl0ASUs-AKNHNe4-DoEP1PcSudP50Zyb09V9kmh21hvYiVpfOw07Ercze9rI2r3ue4OV3cho9mKtR4xX2PYMRM5ywJxHuk8rYQ7KSHfipwBh"/>
+</div>
+<div class="w-3/5 p-6 flex flex-col justify-between">
+<div>
+<h3 class="font-headline font-bold text-xl text-on-background mb-3">Elena Richards</h3>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Nationality</span>
+<span class="font-semibold text-on-surface">Philippines</span>
+</div>
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Ref Code</span>
+<span class="font-semibold text-on-surface">PH-9921</span>
+</div>
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Last Updated</span>
+<span class="font-semibold text-on-surface italic">12 Oct 2023</span>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/10 pt-4 space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group/check">
+<input class="rounded text-error border-outline-variant w-5 h-5" type="checkbox"/>
+<span class="text-xs font-medium text-on-surface-variant">Select to delete</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/check">
+<input class="rounded text-tertiary border-outline-variant w-5 h-5" type="checkbox"/>
+<span class="text-xs font-medium text-on-surface-variant">Select to hide</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Row 4 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden group hover:shadow-xl transition-all duration-300 relative border border-outline-variant/10">
+<div class="flex h-full">
+<div class="w-2/5 relative bg-surface-container overflow-hidden">
+<div class="absolute top-3 left-3 z-10">
+<span class="bg-primary-container text-on-primary-container text-[10px] font-bold px-2 py-1 rounded-lg uppercase tracking-wider">NEW COMER</span>
+</div>
+<img alt="Maid Profile" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Female professional in business attire portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCANGvvxZYA0mI4fEonR7tS0VnhTGJuJ_xRvMrTeNVpquftbFEnIOM_ooxPtZ6eeO9-A_HzEdb5-cQUlvoB0JC54FF2nRkbSi7Qxb9g8HC4LhujNZl3IZxmN3IvfhVHvj_AgDPDD0tJzrtSrWQUnbo9r9_mr5hGQ0_AkfQ8vjV0wbFLH-_QM_qWJy6DVa_srvWhx5pEkYkM6esrCyGNAeL5DV6yLXqRGRZalxhKAyv8TeIow1h3K40Kv9FwLBZNG2YwAoliidco11cA"/>
+</div>
+<div class="w-3/5 p-6 flex flex-col justify-between">
+<div>
+<h3 class="font-headline font-bold text-xl text-on-background mb-3">Siti Aminah</h3>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Nationality</span>
+<span class="font-semibold text-on-surface">Indonesia</span>
+</div>
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Ref Code</span>
+<span class="font-semibold text-on-surface">ID-8842</span>
+</div>
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Last Updated</span>
+<span class="font-semibold text-on-surface italic">05 Nov 2023</span>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/10 pt-4 space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group/check">
+<input class="rounded text-error border-outline-variant w-5 h-5" type="checkbox"/>
+<span class="text-xs font-medium text-on-surface-variant">Select to delete</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/check">
+<input class="rounded text-tertiary border-outline-variant w-5 h-5" type="checkbox"/>
+<span class="text-xs font-medium text-on-surface-variant">Select to hide</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden group hover:shadow-xl transition-all duration-300 relative border border-outline-variant/10">
+<div class="flex h-full">
+<div class="w-2/5 relative bg-surface-container overflow-hidden">
+<div class="absolute top-3 left-3 z-10">
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-1 rounded-lg uppercase tracking-wider">EX SINGAPORE</span>
+</div>
+<img alt="Maid Profile" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Portrait of an Asian female worker" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_5Evjz9HmiwThwBu_RVkotv_qcO72nDue4TvAdwe0E51xWv6CPCEMRiXmLa3SBXNYmXQtEJ5LtMALwqX_WXCIoQwq8GcFqfbkgNCzVGTspVYSUmIUadOB9SFYDlov5GgfQXBPTUcJhJoczXkk56Wu4zbxXe7uHUvJ08PXuuSLy2wlgCgp6Isu7NKH6Bwalwz4YOI7j83Gxdyxi_CyigVZGHuDEc1g5k-5AXyC7VmxeiL0Sag3QaF1OkL0R4cs4SfqAcswLDn04r1r"/>
+</div>
+<div class="w-3/5 p-6 flex flex-col justify-between">
+<div>
+<h3 class="font-headline font-bold text-xl text-on-background mb-3">Grace Tan</h3>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Nationality</span>
+<span class="font-semibold text-on-surface">Myanmar</span>
+</div>
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Ref Code</span>
+<span class="font-semibold text-on-surface">MM-2109</span>
+</div>
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Last Updated</span>
+<span class="font-semibold text-on-surface italic">29 Sep 2023</span>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/10 pt-4 space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group/check">
+<input class="rounded text-error border-outline-variant w-5 h-5" type="checkbox"/>
+<span class="text-xs font-medium text-on-surface-variant">Select to delete</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/check">
+<input class="rounded text-tertiary border-outline-variant w-5 h-5" type="checkbox"/>
+<span class="text-xs font-medium text-on-surface-variant">Select to hide</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Row 5 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden group hover:shadow-xl transition-all duration-300 relative border border-outline-variant/10">
+<div class="flex h-full">
+<div class="w-2/5 relative bg-surface-container overflow-hidden">
+<div class="absolute top-3 left-3 z-10">
+<span class="bg-tertiary-container text-on-tertiary-container text-[10px] font-bold px-2 py-1 rounded-lg uppercase tracking-wider">EX HONG KONG</span>
+</div>
+<img alt="Maid Profile" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Confident looking woman in casual attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR0zyi_LDa8nwhVaLVOYKFsPjmtgidGJ9AkvgSb1aOWPoMzvT5zj8cjPjW8Z6Al3ziAdQthUHrzIy1OhfDD59_zuHFuTYa2rk5UEiF7KACAwNrz7n27JcGrf32dGC6OIo2XNhZKmNZADVWblVXba5ttHsnKvfKkm0BQHKxzywfwWYkm2HnhKhCtdHi3spFz6WAauYwpXPqWU3CNtP4CPds8rfVN5JKHHVp4jjQfiRZ1s-2PrCZBS82WV8BJsBZ9X1WqpGzFP7Wo5Ai"/>
+</div>
+<div class="w-3/5 p-6 flex flex-col justify-between">
+<div>
+<h3 class="font-headline font-bold text-xl text-on-background mb-3">Mary Jane Doe</h3>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Nationality</span>
+<span class="font-semibold text-on-surface">Philippines</span>
+</div>
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Ref Code</span>
+<span class="font-semibold text-on-surface">PH-3341</span>
+</div>
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Last Updated</span>
+<span class="font-semibold text-on-surface italic">11 Oct 2023</span>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/10 pt-4 space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group/check">
+<input class="rounded text-error border-outline-variant w-5 h-5" type="checkbox"/>
+<span class="text-xs font-medium text-on-surface-variant">Select to delete</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/check">
+<input class="rounded text-tertiary border-outline-variant w-5 h-5" type="checkbox"/>
+<span class="text-xs font-medium text-on-surface-variant">Select to hide</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden group hover:shadow-xl transition-all duration-300 relative border border-outline-variant/10">
+<div class="flex h-full">
+<div class="w-2/5 relative bg-surface-container overflow-hidden">
+<div class="absolute top-3 left-3 z-10">
+<span class="bg-primary-container text-on-primary-container text-[10px] font-bold px-2 py-1 rounded-lg uppercase tracking-wider">AVAILABLE</span>
+</div>
+<img alt="Maid Profile" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up face of a smiling woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTgs4f0EZFZwGvdBcazOr8MThpDqPTg6StGDcAVt7Uo4WbRuT3sc4OZ0ZFuSh7-cu7Euxk51761uo-YkKIa0nycgLQk9LcqgeZl913qy78bbsNveGU6OvdwI9dtNNjBYNZMBs9W_f__SC3S7W6c_eUh8xS_YQz19OKz_B4ps36F9sIVFq_ogIy3zQKsrcRmqNHDr94xgwnijl8iXR147zgAa7ak3qRWasqOpRFjzcuSVil-cEeaamkGqpM2LQiQp7b9MmhpezQsiBQ"/>
+</div>
+<div class="w-3/5 p-6 flex flex-col justify-between">
+<div>
+<h3 class="font-headline font-bold text-xl text-on-background mb-3">Anjali Sharma</h3>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Nationality</span>
+<span class="font-semibold text-on-surface">India</span>
+</div>
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Ref Code</span>
+<span class="font-semibold text-on-surface">IN-7762</span>
+</div>
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Last Updated</span>
+<span class="font-semibold text-on-surface italic">22 Oct 2023</span>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/10 pt-4 space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group/check">
+<input class="rounded text-error border-outline-variant w-5 h-5" type="checkbox"/>
+<span class="text-xs font-medium text-on-surface-variant">Select to delete</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/check">
+<input class="rounded text-tertiary border-outline-variant w-5 h-5" type="checkbox"/>
+<span class="text-xs font-medium text-on-surface-variant">Select to hide</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Pagination -->
+<div class="flex justify-center items-center mb-16 gap-4">
+<button class="px-4 py-2 text-sm font-semibold text-on-surface-variant hover:text-primary flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-base" data-icon="keyboard_double_arrow_left">keyboard_double_arrow_left</span>
+            First
+        </button>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center bg-primary text-on-primary font-bold text-xs">1</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-surface-container-high text-xs transition-colors">2</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-surface-container-high text-xs transition-colors">3</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-surface-container-high text-xs transition-colors">4</button>
+<span class="px-2">...</span>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-surface-container-high text-xs transition-colors">6</button>
+</div>
+<button class="px-4 py-2 text-sm font-semibold text-on-surface-variant hover:text-primary flex items-center gap-1 transition-colors">
+            Last
+            <span class="material-symbols-outlined text-base" data-icon="keyboard_double_arrow_right">keyboard_double_arrow_right</span>
+</button>
+</div>
+<!-- Primary Action Footer -->
+<div class="sticky bottom-8 left-0 right-0 max-w-fit mx-auto">
+<div class="bg-surface-container-lowest/80 backdrop-blur-xl border border-outline-variant/10 rounded-full px-8 py-4 flex gap-6 shadow-[0_10px_30px_rgba(47,51,50,0.1)]">
+<button class="flex items-center gap-3 bg-error text-on-error px-6 py-3 rounded-full font-bold text-sm hover:opacity-90 transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+                Delete the selected maids
+            </button>
+<button class="flex items-center gap-3 bg-tertiary text-on-tertiary px-6 py-3 rounded-full font-bold text-sm hover:opacity-90 transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="visibility_off" style="font-variation-settings: 'FILL' 1;">visibility_off</span>
+                Hide the selected maids
+            </button>
+</div>
+</div>
+</main>
+<!-- Sub-footer Info -->
+<footer class="bg-surface-container-low mt-20 py-12 px-8">
+<div class="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
+<div class="space-y-4 max-w-sm">
+<div class="editorial-header font-extrabold text-xl tracking-tighter opacity-50">VERDANT LEDGER</div>
+<p class="text-on-surface-variant text-sm leading-relaxed">System precision for modern recruitment. This directory is live and accessible to registered employers worldwide.</p>
+</div>
+<div class="grid grid-cols-2 gap-12">
+<div class="space-y-3">
+<h4 class="text-label-md font-bold text-on-background uppercase tracking-widest">Support</h4>
+<ul class="text-sm text-on-surface-variant space-y-2">
+<li class="hover:text-primary cursor-pointer transition-colors">Documentation</li>
+<li class="hover:text-primary cursor-pointer transition-colors">Contact Support</li>
+</ul>
+</div>
+<div class="space-y-3">
+<h4 class="text-label-md font-bold text-on-background uppercase tracking-widest">Platform</h4>
+<ul class="text-sm text-on-surface-variant space-y-2">
+<li class="hover:text-primary cursor-pointer transition-colors">Privacy Policy</li>
+<li class="hover:text-primary cursor-pointer transition-colors">Terms of Use</li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
