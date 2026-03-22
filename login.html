@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Employer Portal | MaidAgency</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Public+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#ffd9e2",
+              "outline": "#6f7a6b",
+              "surface-variant": "#dfe4d9",
+              "secondary-fixed-dim": "#ebc23e",
+              "primary": "#006b1b",
+              "surface-container-high": "#e5eadf",
+              "tertiary-fixed-dim": "#ffb1c7",
+              "surface-container-highest": "#dfe4d9",
+              "secondary-container": "#fdd34d",
+              "on-tertiary-fixed": "#3f001c",
+              "on-surface-variant": "#3f4a3d",
+              "on-primary-fixed-variant": "#005313",
+              "secondary-fixed": "#ffe087",
+              "error-container": "#ffdad6",
+              "background": "#f6fbf0",
+              "error": "#ba1a1a",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#f0f5ea",
+              "inverse-surface": "#2c322a",
+              "on-primary-container": "#f7fff1",
+              "on-background": "#181d16",
+              "on-secondary-fixed": "#241a00",
+              "on-tertiary-fixed-variant": "#851c48",
+              "surface-tint": "#006e1c",
+              "surface": "#f6fbf0",
+              "surface-bright": "#f6fbf0",
+              "on-tertiary": "#ffffff",
+              "on-secondary-fixed-variant": "#574500",
+              "on-error-container": "#93000a",
+              "outline-variant": "#bfcab9",
+              "tertiary": "#a0335d",
+              "on-error": "#ffffff",
+              "on-surface": "#181d16",
+              "tertiary-container": "#c04c76",
+              "on-secondary-container": "#725b00",
+              "surface-container": "#eaf0e4",
+              "primary-fixed-dim": "#7ddc7a",
+              "on-primary-fixed": "#002204",
+              "on-tertiary-container": "#fffbff",
+              "on-primary": "#ffffff",
+              "primary-fixed": "#98f994",
+              "inverse-on-surface": "#edf3e7",
+              "secondary": "#735c00",
+              "inverse-primary": "#7ddc7a",
+              "surface-dim": "#d6dcd1",
+              "primary-container": "#268630",
+              "on-secondary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Public Sans"],
+              "label": ["Public Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-effect {
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+      }
+      .asymmetric-shape {
+        border-radius: 4rem 1.5rem 6rem 1.5rem;
+      }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar Suppressed for Transactional Intent (Login/Registration) -->
+<main class="min-h-screen flex items-center justify-center p-4 md:p-8 lg:p-12">
+<div class="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-0 overflow-hidden bg-surface-container-low rounded-xl shadow-sm">
+<!-- Left Side: Editorial Content/Brand Visual -->
+<div class="hidden lg:flex lg:col-span-5 relative bg-primary overflow-hidden items-end p-12">
+<div class="absolute inset-0 z-0">
+<img alt="Professional modern home interior with natural light" class="w-full h-full object-cover opacity-60 mix-blend-overlay" data-alt="Sunlit minimalist living room with green plants" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA4uUSs-9fpY_U24Pc0gb_DnLdsgX67be7AF7q1h7kHs2Me2LUq3zYA143w6L2pTsv5Zz6dmATR5teewG0Px6CJGoEfp4vQk3drPKY8ZWcbB3RT_QiTmVb4pq98-k1XgEdAGVbjtoPTTkkAE9clf9fr2RthsGVFs7orzXYL3bBZCKttfx0qcypDA-3MJzeUbLRt-nVVc1uq54_HkZf5XprY0IPcJJvXDs_5uguCn9RGdATiqX3iOMNQ0xH11FrxE1eRgYOTA1JMen9"/>
+<div class="absolute inset-0 bg-gradient-to-tr from-primary via-primary/40 to-transparent"></div>
+</div>
+<div class="relative z-10 space-y-6">
+<div class="text-secondary-fixed font-headline font-black text-4xl tracking-tight">MaidAgency</div>
+<div class="space-y-4">
+<h1 class="font-headline text-display-lg text-white font-extrabold leading-tight tracking-tighter">
+                            Exceptional Care <br/> For Your Estate.
+                        </h1>
+<p class="text-on-primary-container text-lg font-light max-w-sm opacity-90 leading-relaxed">
+                            Access our exclusive database of vetted professionals managed with the efficiency of a high-end concierge service.
+                        </p>
+</div>
+<div class="pt-8 flex gap-4">
+<div class="p-4 bg-surface-container-lowest/10 glass-effect rounded-xl flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed">verified_user</span>
+<span class="text-white text-sm font-medium">Vetted Staff</span>
+</div>
+<div class="p-4 bg-surface-container-lowest/10 glass-effect rounded-xl flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed">support_agent</span>
+<span class="text-white text-sm font-medium">24/7 Concierge</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side: Interaction Shell -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-8 md:p-16 lg:p-24 flex flex-col justify-center">
+<!-- Brand Anchor for Mobile -->
+<div class="lg:hidden mb-12 text-center">
+<span class="text-primary font-headline font-black text-3xl tracking-tight">MaidAgency</span>
+</div>
+<!-- Tabs (Service Ribbon Pattern Inspired) -->
+<div class="flex gap-2 p-1 bg-surface-container-low rounded-xl mb-12 w-fit mx-auto lg:mx-0">
+<button class="px-8 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 bg-white text-primary shadow-sm ring-1 ring-black/5">
+                        Sign In
+                    </button>
+<button class="px-8 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 text-on-surface-variant hover:bg-surface-container-high">
+                        Create Account
+                    </button>
+</div>
+<div class="space-y-2 mb-10 text-center lg:text-left">
+<h2 class="font-headline text-3xl font-bold text-on-surface tracking-tight">Employer Portal</h2>
+<p class="text-on-surface-variant/80">Welcome back. Please enter your credentials to manage your services.</p>
+</div>
+<form class="space-y-8 max-w-md mx-auto lg:mx-0">
+<div class="space-y-6">
+<!-- Email Field -->
+<div class="group relative">
+<label class="block text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 ml-1" for="email">Work Email</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-0 bottom-3 text-outline-variant group-focus-within:text-primary transition-colors">mail</span>
+<input class="w-full bg-transparent border-0 border-b-2 border-outline-variant/30 py-3 pl-8 pr-2 focus:ring-0 focus:border-primary transition-all text-on-surface placeholder:text-outline-variant/60 font-medium" id="email" name="email" placeholder="name@company.com" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="group relative">
+<div class="flex justify-between items-end mb-2">
+<label class="block text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-1" for="password">Password</label>
+<a class="text-xs font-semibold text-primary hover:underline transition-all" href="#">Forgot?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-0 bottom-3 text-outline-variant group-focus-within:text-primary transition-colors">lock</span>
+<input class="w-full bg-transparent border-0 border-b-2 border-outline-variant/30 py-3 pl-8 pr-2 focus:ring-0 focus:border-primary transition-all text-on-surface placeholder:text-outline-variant/60 font-medium" id="password" name="password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 ml-1">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary/20 bg-surface-container-low cursor-pointer" id="remember" type="checkbox"/>
+<label class="text-sm font-medium text-on-surface-variant cursor-pointer select-none" for="remember">Remember this device</label>
+</div>
+<!-- CTA Actions -->
+<div class="pt-4 flex flex-col sm:flex-row gap-4">
+<button class="flex-1 bg-gradient-to-br from-primary to-primary-container text-white py-4 rounded-xl font-bold text-lg shadow-lg shadow-primary/10 hover:shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300" type="submit">
+                            Employer Login
+                        </button>
+</div>
+<!-- Alternate Logins (Subtle) -->
+<div class="pt-8 border-t border-outline-variant/20">
+<p class="text-center text-xs font-bold uppercase tracking-tighter text-outline-variant mb-6">Or continue with secure SSO</p>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-2 py-3 px-4 rounded-xl border border-outline-variant/20 hover:bg-surface-container-low transition-colors group" type="button">
+<img alt="Google Logo" class="w-5 h-5" data-alt="Google logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlC8f5ztIbLk6oVJxLvKslhCO3ZZGWknPPtU0vPSfU3wKKaW8INcqTBwvXnKcjQz_OHwWPVoFJ1cQqnx7mECJXsWzkGpce4Z87A9Mh1GCkif9zIxran1t2GPuYs4Jd8-GQGDjhPzkBhpH6McZVS8kJ40_PrCwS4qyue4ZYYxKskTyVGDtrj359KgS4tTE-J54I-SEpnsapWAMzrJFLOtNIMZAwGb2MLBdwIdoLNX9KY2o4VVN1h89gCtfa9ZWTeu2a-QLbrf7dXZuS"/>
+<span class="text-sm font-semibold text-on-surface-variant group-hover:text-on-surface">Google</span>
+</button>
+<button class="flex items-center justify-center gap-2 py-3 px-4 rounded-xl border border-outline-variant/20 hover:bg-surface-container-low transition-colors group" type="button">
+<span class="material-symbols-outlined text-on-background/80" style="font-variation-settings: 'FILL' 1;">ios</span>
+<span class="text-sm font-semibold text-on-surface-variant group-hover:text-on-surface">Apple</span>
+</button>
+</div>
+</div>
+</form>
+<div class="mt-12 text-center lg:text-left">
+<p class="text-sm text-on-surface-variant">
+                        Are you looking for work? 
+                        <a class="text-primary font-bold hover:underline ml-1" href="#">Join as a Service Professional</a>
+</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Component Integration (Filtered for Relevance) -->
+<footer class="w-full mt-auto bg-emerald-50 dark:bg-emerald-950 font-body text-sm">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-12 py-16 w-full max-w-7xl mx-auto">
+<div class="space-y-4">
+<div class="text-lg font-bold text-emerald-900 dark:text-emerald-50">MaidAgency</div>
+<p class="text-emerald-800/60 dark:text-emerald-200/60 max-w-xs">Connecting elite households with premier domestic staffing solutions since 2024.</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-3">
+<span class="font-semibold text-emerald-700 dark:text-emerald-400">Company</span>
+<a class="text-emerald-800/60 dark:text-emerald-200/60 hover:underline decoration-yellow-400 transition-all" href="#">About</a>
+<a class="text-emerald-800/60 dark:text-emerald-200/60 hover:underline decoration-yellow-400 transition-all" href="#">Office Locations</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-semibold text-emerald-700 dark:text-emerald-400">Legal</span>
+<a class="text-emerald-800/60 dark:text-emerald-200/60 hover:underline decoration-yellow-400 transition-all" href="#">Privacy Policy</a>
+<a class="text-emerald-800/60 dark:text-emerald-200/60 hover:underline decoration-yellow-400 transition-all" href="#">Legal Information</a>
+</div>
+</div>
+<div class="flex flex-col gap-4 items-start md:items-end">
+<div class="flex gap-4">
+<a class="p-2 bg-white rounded-full text-emerald-800 shadow-sm hover:text-emerald-600 transition-colors" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+</div>
+<p class="text-emerald-800/60 dark:text-emerald-200/60 text-xs md:text-right">© 2024 MaidAgency. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<!-- FAB Suppressed for Transactional screen (Login/Register) -->
+</body></html>
