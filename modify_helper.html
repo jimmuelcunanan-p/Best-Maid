@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Public_Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "on-primary-container": "#006017",
+                "secondary-container": "#ffdfa0",
+                "on-primary-fixed": "#004b10",
+                "inverse-surface": "#0d0f0e",
+                "on-tertiary-container": "#5e602c",
+                "on-primary": "#eaffe2",
+                "background": "#f9f9f7",
+                "on-secondary-container": "#694d00",
+                "error-container": "#fd795a",
+                "tertiary-fixed": "#f9fbb7",
+                "error-dim": "#791903",
+                "inverse-on-surface": "#9c9d9b",
+                "surface-container-high": "#e6e9e6",
+                "secondary-dim": "#6b4e00",
+                "primary-dim": "#006118",
+                "on-background": "#2f3332",
+                "tertiary": "#60622d",
+                "surface-container": "#eceeec",
+                "outline-variant": "#afb3b0",
+                "primary-container": "#98f994",
+                "secondary": "#7a5a00",
+                "on-secondary-fixed-variant": "#765600",
+                "on-error-container": "#6e1400",
+                "surface-container-highest": "#e0e3e0",
+                "primary-fixed": "#98f994",
+                "surface": "#f9f9f7",
+                "on-surface-variant": "#5c605e",
+                "surface-variant": "#e0e3e0",
+                "surface-tint": "#006f1c",
+                "surface-container-low": "#f3f4f2",
+                "primary-fixed-dim": "#8aea87",
+                "on-tertiary-fixed": "#4c4e1b",
+                "surface-container-lowest": "#ffffff",
+                "inverse-primary": "#9bfc96",
+                "on-secondary": "#fff8f1",
+                "surface-dim": "#d7dbd8",
+                "tertiary-dim": "#545622",
+                "surface-bright": "#f9f9f7",
+                "outline": "#777c79",
+                "on-tertiary": "#fbfdb9",
+                "on-surface": "#2f3332",
+                "tertiary-container": "#f9fbb7",
+                "tertiary-fixed-dim": "#eaecaa",
+                "on-primary-fixed-variant": "#006b1b",
+                "primary": "#006f1c",
+                "on-tertiary-fixed-variant": "#696b35",
+                "on-secondary-fixed": "#523c00",
+                "error": "#a73b21",
+                "secondary-fixed-dim": "#ffcd61",
+                "secondary-fixed": "#ffdfa0",
+                "on-error": "#fff7f6"
+              },
+              fontFamily: {
+                "headline": ["Manrope"],
+                "body": ["Public Sans"],
+                "label": ["Public Sans"]
+              },
+              borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Public Sans', sans-serif;
+            background-color: #f9f9f7;
+            color: #2f3332;
+        }
+        .editorial-text {
+            letter-spacing: -0.02em;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar Small (Anchor) -->
+<header class="bg-[#f9f9f7] dark:bg-slate-950 flex justify-between items-center w-full px-8 py-3 border-b border-[#afb3b0]/15 sticky top-0 z-50">
+<div class="font-['Manrope'] font-extrabold text-lg text-[#2f3332] dark:text-[#eceeec] tracking-tight">
+            Maid Agency Account Management
+        </div>
+<div class="flex items-center gap-6">
+<button class="text-[#5c605e] dark:text-[#afb3b0] hover:text-[#006f1c] transition-colors scale-95 active:opacity-80">
+<span class="material-symbols-outlined">mail</span>
+</button>
+<button class="text-[#5c605e] dark:text-[#afb3b0] hover:text-[#006f1c] transition-colors scale-95 active:opacity-80">
+<span class="material-symbols-outlined">logout</span>
+</button>
+</div>
+</header>
+<!-- TopAppBar Centered Navigation (Anchor) -->
+<nav class="bg-[#f3f4f2] dark:bg-slate-900 flex justify-start gap-8 items-center w-full px-8 py-2 overflow-x-auto">
+<a class="font-['Public_Sans'] text-sm font-medium text-[#5c605e] dark:text-[#afb3b0] pb-1 hover:text-[#7a5a00] transition-all opacity-90 hover:opacity-100" href="#">Home</a>
+<a class="font-['Public_Sans'] text-sm font-medium text-[#5c605e] dark:text-[#afb3b0] pb-1 hover:text-[#7a5a00] transition-all opacity-90 hover:opacity-100" href="#">Agency Profile</a>
+<a class="font-['Public_Sans'] text-sm font-medium text-[#5c605e] dark:text-[#afb3b0] pb-1 hover:text-[#7a5a00] transition-all opacity-90 hover:opacity-100" href="#">Create Helper</a>
+<a class="font-['Public_Sans'] text-sm font-medium text-[#006f1c] dark:text-[#98f994] border-b-2 border-[#7a5a00] pb-1 transition-all opacity-90 hover:opacity-100" href="#">Modify Helper</a>
+<a class="font-['Public_Sans'] text-sm font-medium text-[#5c605e] dark:text-[#afb3b0] pb-1 hover:text-[#7a5a00] transition-all opacity-90 hover:opacity-100" href="#">Manage Access</a>
+<a class="font-['Public_Sans'] text-sm font-medium text-[#5c605e] dark:text-[#afb3b0] pb-1 hover:text-[#7a5a00] transition-all opacity-90 hover:opacity-100" href="#">Enquiry</a>
+</nav>
+<!-- Main Content Canvas -->
+<main class="max-w-6xl mx-auto px-8 py-16">
+<!-- Editorial Header -->
+<div class="mb-12">
+<h1 class="font-headline font-extrabold text-[3.5rem] leading-tight text-on-surface editorial-text mb-2">
+                Modify Helper
+            </h1>
+<p class="font-body text-on-surface-variant text-lg">Search and manage maid profiles within your registry.</p>
+</div>
+<!-- Centered Search Section -->
+<section class="mb-16 flex justify-center">
+<div class="bg-surface-container-lowest p-8 rounded-xl w-full max-w-2xl transition-all hover:bg-white">
+<div class="flex flex-col md:flex-row gap-4">
+<div class="relative flex-grow">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-highest rounded-xl border-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest outline-none transition-all font-body" placeholder="Maid name or Code" type="text"/>
+</div>
+<button class="bg-primary text-on-primary px-10 py-4 rounded-xl font-headline font-bold hover:bg-primary-dim transition-all active:scale-95">
+                        Search
+                    </button>
+</div>
+</div>
+</section>
+<!-- Navigation Cards (Asymmetric Layout) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+<!-- Card: Public -->
+<a class="group relative bg-primary-container p-10 rounded-xl overflow-hidden transition-all hover:translate-y-[-4px]" href="#">
+<div class="relative z-10">
+<div class="bg-white/40 backdrop-blur-md w-14 h-14 rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-on-primary-container text-3xl">visibility</span>
+</div>
+<h3 class="font-headline text-3xl font-extrabold text-on-primary-container mb-2">Maids In Public</h3>
+<p class="font-body text-on-primary-container/70 max-w-[240px]">Manage profiles currently visible to prospective employers.</p>
+</div>
+<!-- Abstract Design Element -->
+<div class="absolute -bottom-8 -right-8 w-48 h-48 bg-primary/10 rounded-full blur-3xl group-hover:bg-primary/20 transition-all"></div>
+<div class="absolute top-0 right-0 p-8 opacity-0 group-hover:opacity-100 transition-all">
+<span class="material-symbols-outlined text-on-primary-container text-4xl">arrow_forward</span>
+</div>
+</a>
+<!-- Card: Hidden -->
+<a class="group relative bg-secondary-container p-10 rounded-xl overflow-hidden transition-all hover:translate-y-[-4px]" href="#">
+<div class="relative z-10">
+<div class="bg-white/40 backdrop-blur-md w-14 h-14 rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-on-secondary-container text-3xl">visibility_off</span>
+</div>
+<h3 class="font-headline text-3xl font-extrabold text-on-secondary-container mb-2">Maids Hidden</h3>
+<p class="font-body text-on-secondary-container/70 max-w-[240px]">Edit or restore archived profiles currently out of public view.</p>
+</div>
+<!-- Abstract Design Element -->
+<div class="absolute -bottom-8 -right-8 w-48 h-48 bg-secondary/10 rounded-full blur-3xl group-hover:bg-secondary/20 transition-all"></div>
+<div class="absolute top-0 right-0 p-8 opacity-0 group-hover:opacity-100 transition-all">
+<span class="material-symbols-outlined text-on-secondary-container text-4xl">arrow_forward</span>
+</div>
+</a>
+</div>
+<!-- Instructional Section -->
+<div class="bg-surface-container-low p-10 rounded-xl space-y-8">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">info</span>
+<p class="font-body text-on-surface-variant leading-relaxed">
+                    Please click the above link to edit/delete the maids in the public/hidden. For better management of your agency ledger, ensure all data is verified before publication.
+                </p>
+</div>
+<!-- Important Notice Banner -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border-l-4 border-secondary">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">warning</span>
+<h4 class="font-headline font-bold text-on-surface tracking-tight uppercase text-sm">Important Notice</h4>
+</div>
+<p class="font-body text-on-surface leading-relaxed italic opacity-80">
+                    "Maid photos should be clear, professional, and updated. Ensure that no personal contact details are visible within the profile photos to comply with agency privacy standards."
+                </p>
+</div>
+</div>
+</main>
+<!-- Footer Meta -->
+<footer class="max-w-6xl mx-auto px-8 py-12 border-t border-outline-variant/10 text-center">
+<p class="font-label text-on-surface-variant text-xs uppercase tracking-widest">
+            The Verdant Ledger • Agency Management System • 2024
+        </p>
+</footer>
+</body></html>
