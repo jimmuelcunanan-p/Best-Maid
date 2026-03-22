@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VerdantMaid | Employer Chat</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Public+Sans:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#ffe087",
+              "surface-tint": "#006e1c",
+              "outline-variant": "#bfcab9",
+              "surface-dim": "#d6dcd1",
+              "secondary": "#735c00",
+              "on-primary-container": "#f7fff1",
+              "inverse-surface": "#2c322a",
+              "tertiary-container": "#c04c76",
+              "surface": "#f6fbf0",
+              "surface-container-low": "#f0f5ea",
+              "error": "#ba1a1a",
+              "on-secondary-container": "#725b00",
+              "tertiary": "#a0335d",
+              "on-secondary-fixed": "#241a00",
+              "on-tertiary-fixed": "#3f001c",
+              "surface-container-high": "#e5eadf",
+              "on-primary-fixed-variant": "#005313",
+              "on-tertiary": "#ffffff",
+              "on-primary": "#ffffff",
+              "inverse-primary": "#7ddc7a",
+              "on-surface-variant": "#3f4a3d",
+              "outline": "#6f7a6b",
+              "surface-container-lowest": "#ffffff",
+              "error-container": "#ffdad6",
+              "surface-container-highest": "#dfe4d9",
+              "primary": "#006b1b",
+              "on-primary-fixed": "#002204",
+              "surface-container": "#eaf0e4",
+              "tertiary-fixed-dim": "#ffb1c7",
+              "on-surface": "#181d16",
+              "tertiary-fixed": "#ffd9e2",
+              "on-secondary-fixed-variant": "#574500",
+              "background": "#f6fbf0",
+              "secondary-container": "#fdd34d",
+              "secondary-fixed-dim": "#ebc23e",
+              "on-error-container": "#93000a",
+              "on-background": "#181d16",
+              "inverse-on-surface": "#edf3e7",
+              "surface-bright": "#f6fbf0",
+              "primary-container": "#268630",
+              "on-error": "#ffffff",
+              "primary-fixed-dim": "#7ddc7a",
+              "primary-fixed": "#98f994",
+              "on-tertiary-container": "#fffbff",
+              "surface-variant": "#dfe4d9",
+              "on-tertiary-fixed-variant": "#851c48",
+              "on-secondary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Public Sans"],
+              "label": ["Public Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .chat-scroll::-webkit-scrollbar {
+        width: 4px;
+      }
+      .chat-scroll::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .chat-scroll::-webkit-scrollbar-thumb {
+        background: #bfcab9;
+        border-radius: 10px;
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body overflow-hidden">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation (Shared Component: SideNavBar) -->
+<aside class="hidden lg:flex flex-col h-full p-4 space-y-2 bg-stone-50 dark:bg-stone-950 h-screen w-64 border-r-0 font-manrope text-sm font-medium">
+<div class="mb-8 px-2">
+<span class="text-xl font-black text-green-800 dark:text-green-200">VerdantMaid</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-4 mb-6 bg-white rounded-xl shadow-sm">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest">
+<img alt="Employer Profile Avatar" class="w-full h-full object-cover" data-alt="Professional profile headshot of a premium member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7K1P7uj7s3hoPKSIIm4hyJniawcZ-anav3Wr535AlhLn1iO_5vOZuO0u-kIhvoOwYTDAZAHUdZhl2eraE2jG_PuzRttb8f8qHgF_VVSewkQ4oKxKXEL7dOgqNvtPHZhM6qGTYLlKEjOAdu_LsverXpd689ev0uZ0GfmZ1D1XoivwbEpTgV_0cqiGej0UttFNcZe-3zmTN5U5fQZRO8Onfg7vcN-c3api-rVJl6v1nXMg62VtdVWu9SlIGvyje1BXyXqo6e9Xb06e5"/>
+</div>
+<div>
+<p class="text-on-surface font-bold leading-tight">Premium Employer</p>
+<p class="text-xs text-stone-500">Elite Tier Member</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 dark:text-stone-400 hover:bg-stone-200/50 dark:hover:bg-stone-800/50 hover:translate-x-1 transition-transform duration-200 group" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-green-100/50 dark:bg-green-900/30 text-green-800 dark:text-green-200 font-bold rounded-lg group" href="#">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">forum</span>
+<span>Messages</span>
+<span class="ml-auto w-2.5 h-2.5 bg-red-600 rounded-full shadow-sm ring-2 ring-white dark:ring-stone-900"></span></a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 dark:text-stone-400 hover:bg-stone-200/50 dark:hover:bg-stone-800/50 hover:translate-x-1 transition-transform duration-200 group" href="#">
+<span class="material-symbols-outlined text-xl">calendar_today</span>
+<span>My Bookings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 dark:text-stone-400 hover:bg-stone-200/50 dark:hover:bg-stone-800/50 hover:translate-x-1 transition-transform duration-200 group" href="#">
+<span class="material-symbols-outlined text-xl">favorite</span>
+<span>Favorites</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 dark:text-stone-400 hover:bg-stone-200/50 dark:hover:bg-stone-800/50 hover:translate-x-1 transition-transform duration-200 group" href="#">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="pt-4 border-t border-stone-200/50 space-y-1">
+<button class="w-full bg-primary hover:bg-primary-container text-white py-3 rounded-xl font-bold transition-all mb-4 Active: opacity-70">
+                    Post New Job
+                </button>
+<a class="flex items-center gap-3 px-4 py-2 text-stone-500 text-xs hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined text-sm">help</span>
+<span>Help Center</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-stone-500 text-xs hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined text-sm">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area: Chat System -->
+<main class="flex-1 flex overflow-hidden bg-surface">
+<!-- Chat List Panel -->
+<section class="w-full md:w-80 lg:w-96 flex flex-col border-r-0 bg-surface-container-low">
+<header class="p-6">
+<h1 class="font-headline text-2xl font-extrabold tracking-tight text-on-surface mb-6">Conversations</h1>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container-lowest border-none rounded-xl pl-10 pr-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-outline-variant" placeholder="Search messages..." type="text"/>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto chat-scroll px-3 space-y-1">
+<!-- Active Chat Item -->
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-white shadow-sm cursor-pointer border-l-4 border-primary">
+<div class="relative">
+<img alt="Elena Rose" class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of a friendly housekeeper Elena Rose" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyfniKXpzCPC4BZw5mw59B6NeaQR-PXtJZLzRMFsmyvkSJwk05hWtcRhmgO2pJ6G07P9cCy6ZlvZYWIf9Bup5RtNFJOMflEOkT0EHFvFwm9GAaJhqdqqQLxUHsbJyKc2gdELhTrY3JJetynwHX48O4hw1MZ7n48Rh8MNlWQlfPa601hBAMga-MAY66GNUCFE5jwXFYrSBisxORZ-xLXbJFtWOMckaCcZ5LAb0mRxciFbAJXEu1L7osnIIaZW6xFI_lKvRlzoA7PpKX"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline">
+<h3 class="font-bold text-on-surface truncate">Elena Rose</h3>
+<span class="text-[10px] text-outline font-medium">10:42 AM</span>
+</div>
+<p class="text-sm text-primary font-semibold truncate">I'll be there by 9 AM tomorrow...</p>
+</div>
+</div>
+<!-- Other Chat Items -->
+<div class="flex items-center gap-4 p-4 rounded-2xl hover:bg-surface-container-highest transition-colors cursor-pointer group">
+<img alt="Marcus Chen" class="w-12 h-12 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Profile photo of Marcus Chen, professional gardener" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO8NYQxI-3e5ZVqvHemStRfvVZ7XsDi7FkJ2INNbUfmR1NH_LS-j-OYgetZkFkB1VPADYyd2mdwC_LTo1MT67BBON2FUcFj1is2PwsE-cFRhUV23HlxtBIY2mu-M9NnWquxs4xpvK2RauQNunQr4H3k8OUUYEPSXnr0k_XSxwBaY9dl3YTMgp-7d_YKHslwgLXvPHQWE7tXHQD3e9gbkNLXbdSYjovYam1txxDOeq5GvjJlMslWfRB2nEwl-x7QEzL2z43mHbYfVGf"/>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline">
+<h3 class="font-bold text-on-surface-variant truncate">Marcus Chen</h3>
+<span class="text-[10px] text-outline">Yesterday</span>
+</div>
+<p class="text-sm text-outline-variant truncate">The garden supplies have arrived.</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-2xl hover:bg-surface-container-highest transition-colors cursor-pointer group">
+<img alt="Sophia Lind" class="w-12 h-12 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Headshot of Sophia Lind, estate manager" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2FGZzsqhXYxYGr7LrflZC9t7t6C111kMy3Mg09NDtu5CGoA57W9hTJKNvU8Z7kHOy6LJ8Zhd8oCFw29jkYmUturzZyECHwLGWE-ZFc6_VHB2jKIzzraJkodzhx5i_s6Hn4NjHu0P13cHDAFAF8WLXBP1ZR2xsHYpSJ-EZ8C-iJ1B2aNCCjepOR3shNLcwvsQNBgT-gHVPOKjSntuczfYBjjY_wo1uxfLb9R5vGHbUq7BniuYGSCsNBWxtkGucYJb1_ZNSECJAPy1Q"/>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline">
+<h3 class="font-bold text-on-surface-variant truncate">Sophia Lind</h3>
+<span class="text-[10px] text-outline">Tue</span>
+</div>
+<p class="text-sm text-outline-variant truncate">Meeting confirmed for Friday.</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-2xl hover:bg-surface-container-highest transition-colors cursor-pointer group">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-bold text-lg">
+                            JD
+                        </div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline">
+<h3 class="font-bold text-on-surface-variant truncate">James Doe</h3>
+<span class="text-[10px] text-outline">1 wk ago</span>
+</div>
+<p class="text-sm text-outline-variant truncate">Thanks for the opportunity!</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Active Conversation Area -->
+<section class="hidden md:flex flex-1 flex-col bg-surface relative">
+<!-- Chat Header -->
+<header class="px-8 py-5 flex items-center justify-between border-b border-transparent bg-white/40 backdrop-blur-md sticky top-0 z-10">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="Elena Rose" class="w-10 h-10 rounded-full object-cover" data-alt="Portrait of Elena Rose" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkxDNWZf03wVo1V9SB8ly2083SbHBlsnlnBXcb08sgOuk-TCP1iZcbguE1cVEv44X-u_umgPe1Ok1Mlw2NbUJy0GrcLy6aUJmvoFaZOd7r944VDnm3dFUK8e6vyQf1RSiJQ_lOWlfpDjH38BNZSsreZMYnkOE7h0jBTh04ZRRCxMslYNHSHadG62xkOHbwDSF6LpCfAIReIvmVadVw2-YSGEOkMCsSbUoKOPEPZbg8Z2RmUnvofAF274KHF1hwj3ibYS-DiPdap9OD"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-white rounded-full"></span>
+</div>
+<div>
+<h2 class="font-headline font-bold text-on-surface">Elena Rose</h2>
+<p class="text-[11px] text-primary font-medium flex items-center gap-1">
+<span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+                                Online now
+                            </p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-surface-container-high rounded-full transition-colors text-outline">
+<span class="material-symbols-outlined">call</span>
+</button>
+<button class="p-2 hover:bg-surface-container-high rounded-full transition-colors text-outline">
+<span class="material-symbols-outlined">videocam</span>
+</button>
+<button class="p-2 hover:bg-surface-container-high rounded-full transition-colors text-outline">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</header>
+<!-- Message History -->
+<div class="flex-1 overflow-y-auto chat-scroll p-8 space-y-8 flex flex-col">
+<!-- Date Divider -->
+<div class="flex items-center gap-4">
+<div class="flex-1 h-px bg-outline-variant/20"></div>
+<span class="text-[10px] font-bold tracking-widest uppercase text-outline">Today</span>
+<div class="flex-1 h-px bg-outline-variant/20"></div>
+</div>
+<!-- Received Message -->
+<div class="flex gap-3 max-w-[80%]">
+<div class="flex flex-col gap-1">
+<div class="bg-surface-container-high text-on-surface-variant p-4 rounded-2xl rounded-tl-none font-body text-sm leading-relaxed">
+                                Good morning! I'm confirming our appointment for the deep cleaning service tomorrow morning. Is 9:00 AM still a good time for you?
+                            </div>
+<span class="text-[10px] text-outline ml-1">09:15 AM</span>
+</div>
+</div>
+<!-- Sent Message -->
+<div class="flex flex-col items-end gap-1 self-end max-w-[80%]">
+<div class="bg-primary text-on-primary p-4 rounded-2xl rounded-tr-none font-body text-sm leading-relaxed shadow-lg shadow-primary/10">
+                            Good morning, Elena! Yes, 9:00 AM works perfectly. We'll have the keys ready at the front desk for you.
+                        </div>
+<div class="flex items-center gap-1 mr-1">
+<span class="text-[10px] text-outline">09:18 AM</span>
+<span class="material-symbols-outlined text-xs text-primary" style="font-variation-settings: 'wght' 700;">done_all</span>
+</div>
+</div>
+<!-- Received Message with Image -->
+<div class="flex gap-3 max-w-[80%]">
+<div class="flex flex-col gap-2">
+<div class="bg-surface-container-high text-on-surface-variant p-4 rounded-2xl rounded-tl-none font-body text-sm leading-relaxed">
+                                Great. I've prepared the eco-friendly cleaning kit as requested. Here are the specific detergents I'll be using:
+                            </div>
+<div class="rounded-2xl overflow-hidden border-4 border-surface-container-high max-w-sm">
+<img alt="Cleaning Supplies" class="w-full h-48 object-cover" data-alt="Selection of premium eco-friendly cleaning supplies in a basket" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIooft45x_3pr7qgZ6zxunPgDoHPrk7sjofVYsDuE6DoBx6kH9YbfW-PK03eUi00CK7K8TZdaNroacSt88wRtx1CFIVeqTp0QTHfWPTTc6fMOCJvge2SbmCdLi1Xq5LKJx2QdzE9YZVHYU8aiVpP3SbgiV2Wy0BWmOlwz1X15ZCRDT5Uz-h3E1DpwSSSKjwm28jf4icGhRK6q5h9CTXvSGG1lHsFpRYi_Fuo5woYTspBy29hKcGgactwJQQtDU3XFfG8ng_awIxPHd"/>
+</div>
+<span class="text-[10px] text-outline ml-1">10:40 AM</span>
+</div>
+</div>
+<!-- Typing Indicator -->
+<div class="flex items-center gap-2 text-primary font-medium text-xs">
+<div class="flex gap-1">
+<span class="w-1 h-1 bg-primary rounded-full animate-bounce"></span>
+<span class="w-1 h-1 bg-primary rounded-full animate-bounce [animation-delay:0.2s]"></span>
+<span class="w-1 h-1 bg-primary rounded-full animate-bounce [animation-delay:0.4s]"></span>
+</div>
+                        Elena is typing...
+                    </div>
+</div>
+<!-- Message Input Bar -->
+<footer class="p-6 bg-white/40 backdrop-blur-md">
+<div class="max-w-4xl mx-auto flex items-end gap-3 bg-surface-container-lowest p-2 rounded-2xl shadow-xl shadow-stone-900/5 ring-1 ring-black/5">
+<button class="p-2.5 text-outline hover:text-primary transition-colors hover:bg-surface-container rounded-xl">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+<button class="p-2.5 text-outline hover:text-primary transition-colors hover:bg-surface-container rounded-xl">
+<span class="material-symbols-outlined">sentiment_satisfied</span>
+</button>
+<textarea class="flex-1 bg-transparent border-none focus:ring-0 text-sm py-3 px-2 resize-none placeholder:text-outline-variant" placeholder="Write a message..." rows="1"></textarea>
+<button class="bg-primary text-white p-3 rounded-xl hover:bg-primary-container transition-all shadow-md shadow-primary/20 Active: scale-95">
+<span class="material-symbols-outlined block" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+<div class="mt-4 flex justify-center">
+<p class="text-[10px] text-outline-variant font-medium tracking-wide">END-TO-END ENCRYPTED CONCIERGE CHAT</p>
+</div>
+</footer>
+<!-- Floating Accented Element (Editorial Touch) -->
+<div class="absolute top-24 right-8 w-48 p-4 bg-secondary-container rounded-2xl shadow-xl transform rotate-3 hidden xl:block pointer-events-none opacity-90">
+<p class="text-[10px] font-bold text-on-secondary-container mb-2 tracking-tighter uppercase">Scheduled Service</p>
+<p class="text-xs font-headline font-bold text-on-secondary-container">Deep Estate Cleaning</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-sm text-on-secondary-container">calendar_month</span>
+<span class="text-[10px] text-on-secondary-container font-medium">Tomorrow, 9:00 AM</span>
+</div>
+</div>
+</section>
+</main>
+</div>
+</body></html>
