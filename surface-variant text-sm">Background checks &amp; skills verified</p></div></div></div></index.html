@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MaidAgency - Premium Domestic Services</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Public_Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-background": "#181d16",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#98f994",
+                        "on-secondary-fixed": "#241a00",
+                        "inverse-on-surface": "#edf3e7",
+                        "secondary-container": "#fdd34d",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#a0335d",
+                        "on-secondary-fixed-variant": "#574500",
+                        "surface-bright": "#f6fbf0",
+                        "surface-container-low": "#f0f5ea",
+                        "surface-dim": "#d6dcd1",
+                        "tertiary-container": "#c04c76",
+                        "on-surface-variant": "#3f4a3d",
+                        "on-primary-container": "#f7fff1",
+                        "on-tertiary-fixed": "#3f001c",
+                        "surface-tint": "#006e1c",
+                        "secondary-fixed": "#ffe087",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#851c48",
+                        "on-secondary-container": "#725b00",
+                        "primary-container": "#268630",
+                        "inverse-surface": "#2c322a",
+                        "primary-fixed-dim": "#7ddc7a",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#735c00",
+                        "outline-variant": "#bfcab9",
+                        "on-error": "#ffffff",
+                        "on-surface": "#181d16",
+                        "surface-variant": "#dfe4d9",
+                        "tertiary-fixed": "#ffd9e2",
+                        "primary": "#006b1b",
+                        "inverse-primary": "#7ddc7a",
+                        "surface-container": "#eaf0e4",
+                        "surface": "#f6fbf0",
+                        "on-primary-fixed": "#002204",
+                        "surface-container-highest": "#dfe4d9",
+                        "on-tertiary-container": "#fffbff",
+                        "on-primary-fixed-variant": "#005313",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#ffb1c7",
+                        "secondary-fixed-dim": "#ebc23e",
+                        "outline": "#6f7a6b",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#e5eadf",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#f6fbf0"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Public Sans"],
+                        "label": ["Public Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(24px);
+        }
+        .editorial-gradient {
+            background: linear-gradient(135deg, #006b1b 0%, #268630 100%);
+        }
+        .ghost-border {
+            border-bottom: 1px solid rgba(191, 202, 185, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-emerald-950/80 backdrop-blur-md shadow-sm dark:shadow-none transition-colors duration-300 ease-in-out">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-black text-emerald-800 dark:text-emerald-200 font-headline tracking-tight">MaidAgency</div>
+<div class="hidden md:flex items-center space-x-10">
+<a class="text-emerald-700 dark:text-emerald-300 border-b-2 border-emerald-600 font-manrope tracking-tight font-bold py-1" href="#">Services</a>
+<a class="text-emerald-900/70 dark:text-emerald-100/70 font-manrope tracking-tight font-bold hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors" href="#">Search Maids</a>
+<a class="text-emerald-900/70 dark:text-emerald-100/70 font-manrope tracking-tight font-bold hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors" href="#">About</a>
+<a class="text-emerald-900/70 dark:text-emerald-100/70 font-manrope tracking-tight font-bold hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-6"><button class="text-emerald-900/70 dark:text-emerald-100/70 font-manrope tracking-tight font-bold hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors py-1">Employer Login</button>
+<button class="relative p-2 text-emerald-900/70 dark:text-emerald-100/70 hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">chat</span>
+<span class="absolute top-0 right-0 -mt-1 -mr-1 w-5 h-5 bg-red-600 text-white text-[10px] font-bold rounded-full border-2 border-white dark:border-emerald-900 flex items-center justify-center shadow-sm">3</span>
+</button><button class="editorial-gradient text-on-primary px-6 py-2.5 rounded-md font-bold text-sm tracking-wide transition-all active:scale-95 shadow-lg shadow-primary/20">Sign Up</button></div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative pt-32 pb-20 px-8 max-w-7xl mx-auto overflow-hidden">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="z-10">
+<span class="inline-block px-4 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-xs font-bold uppercase tracking-widest mb-6">Expert Domestic Care</span>
+<h1 class="text-6xl lg:text-7xl font-headline font-extrabold text-on-surface leading-[1.05] tracking-tight mb-8">
+                    Exceptional <span class="text-primary italic">Support</span> For Every Home.
+                </h1>
+<p class="text-lg text-on-surface-variant max-w-xl leading-relaxed mb-10">
+                    Discover professional help tailored to your family's unique needs. From housekeeping to specialized infant care, we provide vetted experts you can trust.
+                </p>
+<div class="flex flex-row flex-nowrap gap-4 overflow-x-auto">
+<button class="editorial-gradient text-on-primary px-8 py-4 rounded-md font-bold text-lg shadow-xl shadow-primary/10 transition-transform hover:-translate-y-1 whitespace-nowrap">Through Agency</button>
+<button class="bg-surface-container-high text-on-surface px-8 py-4 rounded-md font-bold text-lg hover:bg-surface-container-highest transition-colors whitespace-nowrap">Direct Hire</button>
+<button class="border border-outline-variant/30 text-on-surface px-8 py-4 rounded-md font-bold text-lg hover:bg-surface-container-low transition-colors whitespace-nowrap">Bio Data Direct Sell</button>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -top-10 -right-10 w-64 h-64 bg-secondary-container/40 rounded-full blur-3xl opacity-50"></div>
+<div class="relative overflow-hidden rounded-3xl aspect-[4/5] shadow-2xl">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Professional maid in a clean modern kitchen environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGWU7uyoVmv68mnSwwGQyogSrm0DYYPOD3vm-EkFpn-KSmkz4ISOySl7CVMd8Ob6mpbxL7IGEBJq9XhwhU2iGARRTXZvR9AUT8wVlG_jOHS9xB0L28kn_w4UPUduCW5kSfRv0KzN3GQV3dcOI8YQTelevL1fw1rU0oYRgPf18WVZlU8nnk2WYKMISd-jRWvm4F2rxhFGGhzhX0_fdvj3lFHANGP54XfFgak9ViIhoXHZMrp3CQJOmqTw-5-DMjmGTEBIDomhkg4UTF"/>
+<div class="absolute bottom-6 left-6 right-6 p-6 glass-nav rounded-2xl shadow-lg border border-white/20">
+<div class="flex items-center gap-4">
+<div class="p-2 bg-primary rounded-lg text-on-primary">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<div>
+<p class="text-on-surface font-bold">Vetted Professionals</p>
+<p class="text-on-surface-variant text-sm">Background checks &amp; skills verified</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Prominent Search Bar Section -->
+<div class="mt-20 relative z-20">
+<div class="bg-surface-container-lowest p-6 lg:p-10 rounded-2xl shadow-xl shadow-on-surface/5 border border-outline-variant/10">
+<h3 class="text-2xl font-headline font-bold mb-8 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">person_search</span>
+                    Find Your Ideal Match
+                </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant px-1">Nationality</label>
+<select class="ghost-border bg-transparent py-3 focus:bg-surface-container-high focus:border-primary transition-all outline-none text-on-surface">
+<option>All Nationalities</option>
+<option>Philippines</option>
+<option>Indonesia</option>
+<option>Myanmar</option>
+<option>India</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant px-1">Experience</label>
+<select class="ghost-border bg-transparent py-3 focus:bg-surface-container-high focus:border-primary transition-all outline-none text-on-surface">
+<option>Any Experience</option>
+<option>1-3 Years</option>
+<option>3-5 Years</option>
+<option>5+ Years</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant px-1">Age Group</label>
+<select class="ghost-border bg-transparent py-3 focus:bg-surface-container-high focus:border-primary transition-all outline-none text-on-surface">
+<option>Any Age</option>
+<option>20 - 30</option>
+<option>30 - 40</option>
+<option>40+</option>
+</select>
+</div>
+<div class="flex items-end">
+<button class="w-full bg-secondary-container text-on-secondary-container py-4 rounded-md font-bold flex items-center justify-center gap-2 hover:bg-secondary-fixed transition-colors">
+<span class="material-symbols-outlined">search</span>
+                            Search Maids
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Core Services - Bento Grid Layout -->
+<section class="py-24 px-8 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div>
+<h2 class="text-4xl lg:text-5xl font-headline font-extrabold text-on-surface leading-tight">Our Core <span class="text-primary">Services</span></h2>
+<p class="text-on-surface-variant mt-4 text-lg">Specialized care designed for modern living standards.</p>
+</div>
+<button class="text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all">
+                    View All Services <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-6">
+<!-- Housekeeping -->
+<div class="md:col-span-3 lg:col-span-4 bg-surface-container-lowest rounded-3xl overflow-hidden group">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Person neatly arranging white pillows on a bed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3EehT7zT5baQIttUHaxQBjsyzVAeDal0fMMDdawIDHfcszPNad3xI1D_gVVOuJuaGLJiH1hc-exC4Vg4bddbHUckt6I12TwAcKD6MGgeBz2xYEVH5uDwDWTHEdokZ1fNkplZm35egaHQFOn_w1ZkKPpPnu-Xx7iigcB-dO4l6sbH09AdWvfb7f4FQYRa3v6P7ztlJqOSKuQ4rO7h0R0LaPdYJBLc1WDczn6WIp212x98Xl_ZqzE7oRbD1rAtHuwM_ahig6w499z_q"/>
+</div>
+<div class="p-8">
+<h4 class="text-2xl font-headline font-bold mb-3">Housekeeping</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Meticulous cleaning and organization services to keep your living space pristine and orderly.</p>
+<div class="w-12 h-1 bg-secondary-container"></div>
+</div>
+</div>
+<!-- Elderly Care -->
+<div class="md:col-span-3 lg:col-span-8 bg-surface-container-lowest rounded-3xl overflow-hidden group flex flex-col lg:flex-row">
+<div class="p-8 lg:w-1/2 flex flex-col justify-center">
+<h4 class="text-2xl font-headline font-bold mb-3">Elderly Care</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Compassionate and professional support for your senior family members, focusing on dignity and daily well-being.</p>
+<button class="w-fit text-primary font-bold flex items-center gap-2">Learn More <span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+<div class="h-64 lg:h-full lg:w-1/2 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Nurse gently holding the hand of an elderly woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-MJZqQQRY_au_kgd8gp-pC0TfINwl_3VrIj7frx9x16NxdPaiq2ZGaynvECnXIS3eVM3pc406H9ZBMpf_NxG-n1fw6a4rrokXx5XRAAXwGf7W6IBlgef9o0NPpD36BVQxU2Pjh5CIC1gmN07mU6a-1KenYLywiyRH2f6JDjtIAEGqvkkC1O7MY8ta8ugAVq_E_jpmjo_3nBnAHCVLIkCHP1xFHmfSzTB_0sQj-6qQTxXlN202hbO_HAkZRKiayu7SYDfOqs4pFV4v"/>
+</div>
+</div>
+<!-- Infant Care -->
+<div class="md:col-span-3 lg:col-span-8 bg-surface-container-lowest rounded-3xl overflow-hidden group flex flex-col lg:flex-row-reverse">
+<div class="p-8 lg:w-1/2 flex flex-col justify-center">
+<h4 class="text-2xl font-headline font-bold mb-3">Infant Care</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Certified caregivers specializing in newborn safety, hygiene, and developmental support for your little ones.</p>
+<button class="w-fit text-primary font-bold flex items-center gap-2">Learn More <span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+<div class="h-64 lg:h-full lg:w-1/2 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Nanny holding a baby in a bright nursery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUppgneIOveS-Ml_yAttEUNK44XNod38B4wbaX8GZ-iGUoUOIN3vU61jc2_Ga9TOyanOU76uDeiG0hOFfmdgS_Uoojlb0M-2HBiAfaElZnrClCnnC9VfzGhVVobdeijoffIok-adga_V1VyO4thwEC1SGkspSz7eDJg76Fn9tPPBGR8NCP2HQzSHl41ujtZZwdXk9o_Xybp1NNvrj5h8rytFuvAf7G4c_mu3KvKEp9wg5xmbCJ-swyfGGsM-k-gKK7GxBNipeZP9-g"/>
+</div>
+</div>
+<!-- Culinary Service -->
+<div class="md:col-span-3 lg:col-span-4 bg-surface-container-lowest rounded-3xl overflow-hidden group">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Chef preparing fresh organic vegetables in a modern kitchen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHCjAqrPkaj5mxODwx-YEi7uXgL7drh1xMsR6x1JIV8RFryDiwv1xKbFI5npZFRGHSwzeEaWuYgR2uuIDbw64Rpkn8GDX5u9MfJ3P-BJplX1iYHVODQxfc1Xr8Zp1YBOMDnfkHwTnR2278gvdTMewlyilHiWKBgMngItJWaCtBqPFV3uUQe0s_eJEBvsuBc-kelzlOELfa_5qa6a6f8Yt9vvnR3LGT09wGidk7nIRUtwVyflpgvGOUCaFqX1hlRx2nbU0G-Qfgxs16"/>
+</div>
+<div class="p-8">
+<h4 class="text-2xl font-headline font-bold mb-3">Culinary Service</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Nutritious meal preparation tailored to your dietary preferences and health requirements.</p>
+<div class="w-12 h-1 bg-secondary-container"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us - Intentional Asymmetry -->
+<section class="py-24 px-8 max-w-7xl mx-auto">
+<div class="grid lg:grid-cols-2 gap-20 items-center">
+<div class="relative order-2 lg:order-1">
+<div class="absolute inset-0 bg-primary/5 rounded-[3rem] -rotate-3 scale-105"></div>
+<div class="relative bg-surface rounded-[3rem] p-4 shadow-xl">
+<img class="rounded-[2.5rem] w-full aspect-square object-cover" data-alt="Happy family sitting together on a sofa in a clean home" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO_GfeGv3FYXNlH8wOADG9Qa0wIdy9FBBz_NIE8wgZeEiE2lOCXITIMZ-uUNHaRJ5b4ErK58FMc_oQZZyFre4e4nqcw9nvfQYBU-ZGE3VPVG3P_A_5MDkfrysz15BsuhlNO3Rj13XisAq38E7ZQIqn6QQm3EUgdxNunYelsIyC2pgtctbddPB8BLfHXc3Pb339MckFxd_NMiPFeth4X0Nruu0KZ0RpKSd0wtInXUXcq6ZnmoVnUv1rgTeILzoGAKXF01r8RC8Qv_sC"/>
+</div>
+<div class="absolute -bottom-8 -right-8 bg-secondary-fixed p-8 rounded-3xl max-w-xs shadow-xl">
+<p class="text-4xl font-headline font-black text-on-secondary-fixed mb-2">15+</p>
+<p class="text-on-secondary-fixed-variant font-bold leading-tight">Years of Excellence in Domestic Management</p>
+</div>
+</div>
+<div class="order-1 lg:order-2">
+<h2 class="text-4xl lg:text-5xl font-headline font-extrabold text-on-surface leading-tight mb-8">Why Choose <span class="text-primary">MaidAgency?</span></h2>
+<div class="space-y-10">
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-14 h-14 bg-surface-container-highest rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">verified</span>
+</div>
+<div>
+<h4 class="text-xl font-headline font-bold mb-2">Vigorously Vetted</h4>
+<p class="text-on-surface-variant leading-relaxed">Our 7-step screening process ensures only the most trustworthy and capable candidates join our platform.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-14 h-14 bg-surface-container-highest rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">psychology</span>
+</div>
+<div>
+<h4 class="text-xl font-headline font-bold mb-2">Smart Matching</h4>
+<p class="text-on-surface-variant leading-relaxed">We use behavioral science and skills mapping to find the helper who aligns perfectly with your household's values.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-14 h-14 bg-surface-container-highest rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">support_agent</span>
+</div>
+<div>
+<h4 class="text-xl font-headline font-bold mb-2">Ongoing Support</h4>
+<p class="text-on-surface-variant leading-relaxed">Our concierge service doesn't end with a hire. We provide mediation and training support throughout the contract.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Form Section -->
+<section class="py-24 px-8 bg-surface-container-highest">
+<div class="max-w-4xl mx-auto text-center mb-16">
+<h2 class="text-4xl lg:text-5xl font-headline font-extrabold text-on-surface leading-tight mb-6">Initiate Your Search Today</h2>
+<p class="text-on-surface-variant text-lg">Tell us your requirements and our experts will shortlist the best candidates for you within 24 hours.</p>
+</div>
+<div class="max-w-3xl mx-auto bg-surface p-8 lg:p-12 rounded-[2rem] shadow-2xl">
+<form class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant px-1">Your Full Name</label>
+<input class="ghost-border bg-transparent py-3 focus:bg-surface-container-low focus:border-primary transition-all outline-none border-b-2 border-outline-variant/30 px-1" placeholder="John Doe" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant px-1">Email Address</label>
+<input class="ghost-border bg-transparent py-3 focus:bg-surface-container-low focus:border-primary transition-all outline-none border-b-2 border-outline-variant/30 px-1" placeholder="john@example.com" type="email"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant px-1">Phone Number</label>
+<input class="ghost-border bg-transparent py-3 focus:bg-surface-container-low focus:border-primary transition-all outline-none border-b-2 border-outline-variant/30 px-1" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant px-1">Main Requirement</label>
+<select class="ghost-border bg-transparent py-3 focus:bg-surface-container-low focus:border-primary transition-all outline-none border-b-2 border-outline-variant/30 px-1">
+<option>Housekeeping</option>
+<option>Elderly Care</option>
+<option>Infant Care</option>
+<option>Culinary Service</option>
+</select>
+</div>
+<div class="md:col-span-2 flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant px-1">Message (Optional)</label>
+<textarea class="ghost-border bg-transparent py-3 focus:bg-surface-container-low focus:border-primary transition-all outline-none border-b-2 border-outline-variant/30 px-1 resize-none" placeholder="Tell us more about your specific needs..." rows="3"></textarea>
+</div>
+<div class="md:col-span-2">
+<button class="w-full editorial-gradient text-on-primary py-5 rounded-md font-bold text-lg shadow-lg hover:shadow-primary/30 transition-all active:scale-[0.98]">
+                        Submit My Request
+                    </button>
+</div>
+</form>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-emerald-50 dark:bg-emerald-950 font-public-sans text-sm text-emerald-800 dark:text-emerald-100">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-12 py-16 max-w-7xl mx-auto">
+<div class="space-y-6">
+<div class="text-lg font-bold text-emerald-900 dark:text-emerald-50 font-headline">MaidAgency</div>
+<p class="text-emerald-800/60 dark:text-emerald-200/60 leading-relaxed max-w-xs">
+                    Redefining domestic support with premium standards and ethical practices since 2009.
+                </p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-emerald-700 cursor-pointer">social_leaderboard</span>
+<span class="material-symbols-outlined text-emerald-700 cursor-pointer">local_post_office</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-3">
+<h5 class="font-bold text-emerald-900 mb-2">Company</h5>
+<a class="text-emerald-800/60 dark:text-emerald-200/60 hover:underline decoration-yellow-400 transition-all" href="#">About Us</a>
+<a class="text-emerald-800/60 dark:text-emerald-200/60 hover:underline decoration-yellow-400 transition-all" href="#">Office Locations</a>
+<a class="text-emerald-800/60 dark:text-emerald-200/60 hover:underline decoration-yellow-400 transition-all" href="#">Contact</a>
+</div>
+<div class="flex flex-col gap-3">
+<h5 class="font-bold text-emerald-900 mb-2">Legal</h5>
+<a class="text-emerald-800/60 dark:text-emerald-200/60 hover:underline decoration-yellow-400 transition-all" href="#">Legal Information</a>
+<a class="text-emerald-800/60 dark:text-emerald-200/60 hover:underline decoration-yellow-400 transition-all" href="#">Privacy Policy</a>
+<a class="text-emerald-800/60 dark:text-emerald-200/60 hover:underline decoration-yellow-400 transition-all" href="#">Terms of Service</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-bold text-emerald-900 mb-2">Join Our Newsletter</h5>
+<p class="text-emerald-800/60 dark:text-emerald-200/60">Get monthly domestic management tips and early access to new helper bio-data.</p>
+<div class="flex gap-2">
+<input class="bg-white/50 border border-emerald-200 rounded px-3 py-2 text-sm w-full focus:outline-none focus:ring-1 focus:ring-emerald-500" placeholder="Email" type="email"/>
+<button class="bg-emerald-800 text-white px-4 py-2 rounded font-bold">Join</button>
+</div>
+</div>
+</div>
+<div class="border-t border-emerald-900/10 px-12 py-8 flex flex-col md:flex-row justify-between items-center gap-4 max-w-7xl mx-auto">
+<p class="text-emerald-800/60 dark:text-emerald-200/60">© 2024 MaidAgency. All rights reserved.</p>
+<div class="flex gap-8">
+<span class="text-emerald-800/40">Powered by Domestic Excellence Framework</span>
+</div>
+</div>
+</footer>
+</body></html>
