@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Maid Agency Account Management - Veridian Home</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Public_Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed": "#ffe087",
+                        "primary-container": "#268630",
+                        "primary-fixed-dim": "#7ddc7a",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#c04c76",
+                        "on-primary-container": "#f7fff1",
+                        "inverse-on-surface": "#edf3e7",
+                        "on-secondary-fixed-variant": "#574500",
+                        "outline-variant": "#bfcab9",
+                        "on-tertiary-fixed": "#3f001c",
+                        "secondary-container": "#fdd34d",
+                        "surface-dim": "#d6dcd1",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f0f5ea",
+                        "on-secondary-fixed": "#241a00",
+                        "inverse-primary": "#7ddc7a",
+                        "on-surface": "#181d16",
+                        "on-background": "#181d16",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#dfe4d9",
+                        "tertiary-fixed-dim": "#ffb1c7",
+                        "primary-fixed": "#98f994",
+                        "primary": "#006b1b",
+                        "surface": "#f6fbf0",
+                        "on-error-container": "#93000a",
+                        "outline": "#6f7a6b",
+                        "on-primary-fixed": "#002204",
+                        "surface-tint": "#006e1c",
+                        "secondary-fixed-dim": "#ebc23e",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#dfe4d9",
+                        "tertiary": "#a0335d",
+                        "on-tertiary-fixed-variant": "#851c48",
+                        "background": "#f6fbf0",
+                        "on-primary-fixed-variant": "#005313",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#ffd9e2",
+                        "surface-container-high": "#e5eadf",
+                        "on-secondary-container": "#725b00",
+                        "surface-bright": "#f6fbf0",
+                        "on-tertiary-container": "#fffbff",
+                        "inverse-surface": "#2c322a",
+                        "on-surface-variant": "#3f4a3d",
+                        "surface-container": "#eaf0e4",
+                        "secondary": "#735c00"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Public Sans"],
+                        "label": ["Public Sans"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- Top Navigation Anchor (As per Shared Components JSON) -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl shadow-sm">
+<div class="flex justify-between items-center w-full px-6 py-3 max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="text-xl font-bold tracking-tight text-green-900 headline">Maid Agency Account Management</span>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative flex items-center justify-center w-10 h-10 rounded-full text-zinc-500 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all group">
+<span class="material-symbols-outlined text-[24px]">mail</span>
+<span class="absolute top-2 right-2 flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
+</span>
+</button><button class="flex items-center gap-2 text-zinc-500 font-medium hover:text-error transition-colors text-sm group">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+                    Log Out
+                </button>
+</div>
+</div>
+<div class="bg-zinc-100 dark:bg-zinc-800 h-[1px] w-full"></div>
+</header>
+<!-- Secondary Navigation Shell -->
+<nav class="mt-[53px] bg-surface-container-low border-b border-outline-variant/20">
+<div class="max-w-7xl mx-auto px-6 flex items-center h-12 gap-8">
+<a class="text-green-700 font-bold border-b-2 border-green-700 pb-1 text-xs tracking-wider" href="#">HOME</a>
+<a class="text-zinc-500 font-medium hover:text-green-600 transition-colors text-xs tracking-wider" href="#">AGENCY PROFILE</a>
+<a class="text-zinc-500 font-medium hover:text-green-600 transition-colors text-xs tracking-wider" href="#">ADD MAIDS</a>
+<a class="text-zinc-500 font-medium hover:text-green-600 transition-colors text-xs tracking-wider" href="#">EDIT/DELETE MAIDS</a>
+<a class="text-zinc-500 font-medium hover:text-green-600 transition-colors text-xs tracking-wider" href="#">CHANGE PASSWORD</a>
+<a class="text-zinc-500 font-medium hover:text-green-600 transition-colors text-xs tracking-wider" href="#">ENQUIRY</a>
+</div>
+</nav>
+<main class="max-w-7xl mx-auto px-6 pt-10 pb-20">
+<!-- Welcome Header Stats Section -->
+<div class="mb-12 bg-surface-container-highest/30 rounded-xl p-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h1 class="font-headline text-4xl font-extrabold text-primary mb-2">Welcome! abel</h1>
+<p class="text-on-surface-variant font-medium">Manage your agency performance and directory listings from here.</p>
+</div>
+<div class="flex gap-4">
+<div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-primary">
+<span class="block text-2xl font-bold text-primary">81</span>
+<span class="text-xs text-on-surface-variant uppercase tracking-widest font-bold">Maids in Public</span>
+</div>
+<div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-outline-variant">
+<span class="block text-2xl font-bold text-outline">10181</span>
+<span class="text-xs text-on-surface-variant uppercase tracking-widest font-bold">Maids Hidden</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+<!-- Left Action List: 'Select Your Option' -->
+<section class="md:col-span-5 lg:col-span-4">
+<div class="flex items-center gap-2 mb-6">
+<span class="h-1 w-8 bg-secondary rounded-full"></span>
+<h2 class="font-headline text-xl font-bold text-on-surface">Select Your Option</h2>
+</div>
+<div class="flex flex-col gap-2">
+<a class="group flex items-center justify-between p-4 bg-white rounded-xl hover:bg-primary hover:text-white transition-all duration-300 shadow-sm" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors" style="font-variation-settings: 'FILL' 1">corporate_fare</span>
+<span class="font-semibold text-sm">Agency Profile</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-white/50 text-sm">chevron_right</span>
+</a>
+<a class="group flex items-center justify-between p-4 bg-white rounded-xl hover:bg-primary hover:text-white transition-all duration-300 shadow-sm" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors" style="font-variation-settings: 'FILL' 1">person_add</span>
+<span class="font-semibold text-sm">Add Maids</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-white/50 text-sm">chevron_right</span>
+</a>
+<a class="group flex items-center justify-between p-4 bg-white rounded-xl hover:bg-primary hover:text-white transition-all duration-300 shadow-sm" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors" style="font-variation-settings: 'FILL' 1">edit_document</span>
+<span class="font-semibold text-sm">Edit/Delete Maids</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-white/50 text-sm">chevron_right</span>
+</a>
+<a class="group flex items-center justify-between p-4 bg-white rounded-xl hover:bg-primary hover:text-white transition-all duration-300 shadow-sm" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors" style="font-variation-settings: 'FILL' 1">lock_reset</span>
+<span class="font-semibold text-sm">Change Password</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-white/50 text-sm">chevron_right</span>
+</a>
+<a class="group flex items-center justify-between p-4 bg-white rounded-xl hover:bg-primary hover:text-white transition-all duration-300 shadow-sm" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors" style="font-variation-settings: 'FILL' 1">contract</span>
+<span class="font-semibold text-sm">Employment Contracts &amp; Forms</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="bg-secondary px-2 py-0.5 rounded text-[10px] font-black text-on-secondary-fixed">NEW</span>
+<span class="material-symbols-outlined text-outline group-hover:text-white/50 text-sm">chevron_right</span>
+</div>
+</a>
+</div>
+</section>
+<!-- Right Welcome Content -->
+<section class="md:col-span-7 lg:col-span-8">
+<div class="relative overflow-hidden bg-surface-container-lowest rounded-2xl p-8 lg:p-12 shadow-sm border border-outline-variant/10">
+<!-- Subtle Background Texture -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+<div class="relative z-10">
+<h2 class="font-headline text-5xl font-extrabold text-primary mb-8 tracking-tighter">Welcome</h2>
+<div class="space-y-6 text-on-surface-variant leading-relaxed text-lg">
+<p>
+                                Bestmaid.com.sg is Singapore's leading portal for searching for Foreign Domestic Workers (FDW) / maids in Singapore. Our main aim is to create a channel for the public to find and choose the right domestic worker for their family and individual needs.
+                            </p>
+<p>
+                                We believe that with Bestmaid.com.sg, it will provide the employer an avenue to source for domestic workers through our comprehensive maid profiles, making it easy for the employers to make an informed decision.
+                            </p>
+<div class="pt-6 border-t border-outline-variant/30 grid grid-cols-1 sm:grid-cols-2 gap-8">
+<div>
+<h3 class="font-bold text-on-surface mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1">verified</span>
+                                        Agency Support
+                                    </h3>
+<p class="text-sm">We provide full tools for managing your listings, track enquiries, and maintain agency visibility in a competitive market.</p>
+</div>
+<div>
+<h3 class="font-bold text-on-surface mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1">insights</span>
+                                        Performance Tracking
+                                    </h3>
+<p class="text-sm">Monitor which maid profiles are receiving the most interest and optimize your inventory accordingly.</p>
+</div>
+</div>
+</div>
+<!-- CTA Ribbon - Design System Component -->
+<div class="mt-12 inline-flex items-center gap-4 bg-secondary-fixed px-6 py-3 rounded-full text-on-secondary-fixed font-bold text-sm shadow-sm hover:translate-x-1 transition-transform cursor-pointer">
+                            Learn more about our agency features
+                            <span class="material-symbols-outlined">trending_flat</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer Area -->
+<footer class="mt-20 py-10 border-t border-outline-variant/20 bg-surface-container-low/50">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2">
+<span class="font-headline font-black text-green-800 tracking-tight">VERIDIAN HOME</span>
+<span class="text-outline text-sm">|</span>
+<span class="text-xs text-on-surface-variant">© 2024 STREET PTE LTD. All rights reserved.</span>
+</div>
+<div class="flex gap-6 text-xs font-medium text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+</body></html>
