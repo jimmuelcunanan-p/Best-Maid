@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Employer Enquiry | Veridian Maid Agency</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error-container": "#ffdad6",
+              "primary-fixed": "#98f994",
+              "surface-bright": "#f6fbf0",
+              "on-tertiary-container": "#fffbff",
+              "on-secondary-fixed": "#241a00",
+              "surface-container-low": "#f0f5ea",
+              "on-surface-variant": "#3f4a3d",
+              "on-error-container": "#93000a",
+              "background": "#f6fbf0",
+              "on-surface": "#181d16",
+              "secondary-fixed-dim": "#ebc23e",
+              "primary": "#006b1b",
+              "tertiary-fixed-dim": "#ffb1c7",
+              "inverse-on-surface": "#edf3e7",
+              "inverse-primary": "#7ddc7a",
+              "surface-tint": "#006e1c",
+              "on-background": "#181d16",
+              "tertiary-container": "#c04c76",
+              "surface-container": "#eaf0e4",
+              "outline": "#6f7a6b",
+              "tertiary": "#a0335d",
+              "surface-container-high": "#e5eadf",
+              "on-tertiary-fixed-variant": "#851c48",
+              "surface-dim": "#d6dcd1",
+              "primary-fixed-dim": "#7ddc7a",
+              "primary-container": "#268630",
+              "tertiary-fixed": "#ffd9e2",
+              "on-primary-fixed": "#002204",
+              "error": "#ba1a1a",
+              "surface": "#f6fbf0",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-fixed-variant": "#574500",
+              "inverse-surface": "#2c322a",
+              "secondary-fixed": "#ffe087",
+              "on-primary-fixed-variant": "#005313",
+              "on-tertiary-fixed": "#3f001c",
+              "on-primary": "#ffffff",
+              "on-primary-container": "#f7fff1",
+              "surface-variant": "#dfe4d9",
+              "outline-variant": "#bfcab9",
+              "on-error": "#ffffff",
+              "surface-container-highest": "#dfe4d9",
+              "on-secondary": "#ffffff",
+              "secondary": "#735c00",
+              "on-secondary-container": "#725b00",
+              "secondary-container": "#fdd34d",
+              "on-tertiary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Public Sans"],
+              "label": ["Public Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .pagination-link {
+            @apply text-primary hover:underline px-1 text-sm font-medium;
+        }
+        .pagination-link.active {
+            @apply text-on-surface font-bold pointer-events-none;
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface antialiased">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-xl flex justify-between items-center w-full px-6 py-3 max-w-full border-b border-emerald-100/30">
+<div class="flex items-center gap-4">
+<span class="text-emerald-900 font-extrabold tracking-tighter text-xl font-headline">Maid Agency Account Management</span>
+</div>
+<div class="flex items-center space-x-4">
+<button class="p-2 text-emerald-700 hover:bg-emerald-50 transition-colors rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</button><button class="px-4 py-1.5 text-emerald-700 font-headline tracking-tight text-lg font-bold hover:bg-emerald-50 transition-colors rounded-lg active:scale-95 duration-150">
+                Logout
+            </button>
+</div>
+</header>
+<!-- TopNavBar -->
+<nav class="flex justify-start space-x-8 items-center w-full px-6 py-4 bg-emerald-50/50 border-b border-emerald-100/20">
+<a class="text-emerald-600 pb-1 font-label text-sm font-medium uppercase tracking-wider hover:text-emerald-800 transition-all" href="#">Home</a>
+<a class="text-emerald-600 pb-1 font-label text-sm font-medium uppercase tracking-wider hover:text-emerald-800 transition-all" href="#">Agency Profile</a>
+<a class="text-emerald-600 pb-1 font-label text-sm font-medium uppercase tracking-wider hover:text-emerald-800 transition-all" href="#">Create Helper</a>
+<a class="text-emerald-600 pb-1 font-label text-sm font-medium uppercase tracking-wider hover:text-emerald-800 transition-all" href="#">Modify Helper</a>
+<a class="text-emerald-600 pb-1 font-label text-sm font-medium uppercase tracking-wider hover:text-emerald-800 transition-all" href="#">Manage Access</a>
+<a class="text-emerald-900 border-b-2 border-secondary-container pb-1 font-label text-sm font-medium uppercase tracking-wider" href="#">Enquiry</a>
+</nav>
+<main class="max-w-7xl mx-auto px-6 py-12">
+<div class="mb-6">
+<p class="text-error font-bold mb-2">Welcome! abel</p>
+<h1 class="text-center font-headline text-3xl font-extrabold text-on-surface mb-8">Employer Enquiry</h1>
+</div>
+<!-- Table Container -->
+<div class="bg-white border border-outline-variant/30 overflow-hidden">
+<!-- Top Pagination Bar -->
+<div class="bg-surface-container-low px-4 py-3 flex items-center justify-center relative">
+<div class="flex items-center gap-1">
+<span class="pagination-link active">1</span>
+<a class="pagination-link" href="#">2</a>
+<a class="pagination-link" href="#">3</a>
+<a class="pagination-link" href="#">4</a>
+<a class="pagination-link" href="#">5</a>
+<a class="pagination-link" href="#">6</a>
+<a class="pagination-link" href="#">7</a>
+<a class="pagination-link" href="#">8</a>
+<a class="pagination-link" href="#">9</a>
+<a class="pagination-link" href="#">10</a>
+<a class="pagination-link" href="#">11</a>
+<a class="pagination-link" href="#">12</a>
+<a class="pagination-link" href="#">13</a>
+<a class="pagination-link" href="#">14</a>
+<a class="pagination-link" href="#">15</a>
+<a class="pagination-link" href="#">16</a>
+<a class="pagination-link" href="#">17</a>
+<a class="pagination-link" href="#">18</a>
+<a class="pagination-link" href="#">19</a>
+<a class="pagination-link" href="#">20</a>
+</div>
+<button class="absolute right-4 bg-primary text-white font-bold py-1 px-4 rounded shadow-sm hover:bg-primary-container transition-colors text-sm">Next</button>
+</div>
+<!-- The Table -->
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border-t border-b border-outline-variant/30">
+<thead>
+<tr class="bg-white">
+<th class="border-r border-outline-variant/30 px-4 py-3 text-sm font-bold text-primary text-center w-32">Username</th>
+<th class="border-r border-outline-variant/30 px-4 py-3 text-sm font-bold text-primary text-center w-36">Date</th>
+<th class="border-r border-outline-variant/30 px-4 py-3 text-sm font-bold text-primary text-center w-48">Email</th>
+<th class="border-r border-outline-variant/30 px-4 py-3 text-sm font-bold text-primary text-center w-36">Phone</th>
+<th class="px-4 py-3 text-sm font-bold text-primary text-center">Message</th>
+</tr>
+</thead>
+<tbody class="text-sm text-on-surface">
+<!-- Row 1 -->
+<tr class="border-t border-outline-variant/30">
+<td class="border-r border-outline-variant/30 px-4 py-6 align-top">Jit</td>
+<td class="border-r border-outline-variant/30 px-4 py-6 align-top">22 March 2026, 3:59</td>
+<td class="border-r border-outline-variant/30 px-4 py-6 align-top break-all">jitchu@yahoo.com</td>
+<td class="border-r border-outline-variant/30 px-4 py-6 align-top">90275978</td>
+<td class="px-4 py-6 align-top whitespace-pre-line leading-relaxed">Employer Requirement:
+Nationality: Indonesian
+Age: 31 to 35
+Duty: Taking care of elderly / bedridden
+Language: English</td>
+</tr>
+<!-- Row 2 -->
+<tr class="border-t border-outline-variant/30 bg-surface-container-lowest">
+<td class="border-r border-outline-variant/30 px-4 py-6 align-top">William Lawton</td>
+<td class="border-r border-outline-variant/30 px-4 py-6 align-top">22 March 2026, 3:59</td>
+<td class="border-r border-outline-variant/30 px-4 py-6 align-top break-all">William.Lawton100@gmail.com</td>
+<td class="border-r border-outline-variant/30 px-4 py-6 align-top">19107283080</td>
+<td class="px-4 py-6 align-top whitespace-pre-line leading-relaxed">Live in Spain, will have own apartment, cook, clean, market, massage therapist background as well would be amazing.
+
+Employer Requirement:
+Nationality: Filipino
+Age: 41 and above
+Duty: General Housekeeping
+Language: English
+Off-day: No Off-day</td>
+</tr>
+<!-- Row 3 -->
+<tr class="border-t border-outline-variant/30">
+<td class="border-r border-outline-variant/30 px-4 py-6 align-top">Jit</td>
+<td class="border-r border-outline-variant/30 px-4 py-6 align-top">22 March 2026, 3:58</td>
+<td class="border-r border-outline-variant/30 px-4 py-6 align-top break-all">jitchu@yahoo.com</td>
+<td class="border-r border-outline-variant/30 px-4 py-6 align-top">90275978</td>
+<td class="px-4 py-6 align-top leading-relaxed">Christian Indonesian maid</td>
+</tr>
+<!-- Row 4 (Long) -->
+<tr class="border-t border-outline-variant/30 bg-surface-container-lowest">
+<td class="border-r border-outline-variant/30 px-4 py-6 align-top">John</td>
+<td class="border-r border-outline-variant/30 px-4 py-6 align-top">21 March 2026, 2:14</td>
+<td class="border-r border-outline-variant/30 px-4 py-6 align-top break-all">jcobyohan@gmail.com</td>
+<td class="border-r border-outline-variant/30 px-4 py-6 align-top">91692079</td>
+<td class="px-4 py-6 align-top leading-relaxed space-y-2">
+<p>* Employer's detail</p>
+<ul class="list-none space-y-0.5">
+<li>- Number of Adults: 2</li>
+<li>- Age of kids / Elderly : 14 months</li>
+<li>- Pets: N/A</li>
+<li>- Type of residence : Condominium</li>
+<li>- Will you be providing separate room or shared room ? : seperate room</li>
+<li>- Any dietary restriction (E.g If it's a vegetarian household) : N/A</li>
+<li>- Any Age preference: 30-40</li>
+<li>- Are you comfortable with giving weekly Sundays off &amp; PH off ? : one-day off in a month</li>
+<li>- Any nationality preference? Burmese or Indonesian or Philippines</li>
+<li>- Preferred start date / month for the helper to join in ?: ASAP</li>
+</ul>
+<p class="mt-4">* Other requirement</p>
+<ol class="list-decimal list-inside space-y-0.5">
+<li>The helper who has experiences with small baby, who can sleep with small baby</li>
+<li>Working Experience in SG</li>
+<li>Preferred Asian or Korean employer experience</li>
+<li>(Very important) Humble deligent, Respecting Employer, Good attitude</li>
+<li>Min high school graduate</li>
+<li>PreferredType: Transfer Maid</li>
+<li>Duty: Taking care of infant &amp; Doing housework</li>
+<li>Language: English</li>
+</ol>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="border-t border-outline-variant/30">
+<td class="border-r border-outline-variant/30 px-4 py-6 align-top">Jimmy</td>
+<td class="border-r border-outline-variant/30 px-4 py-6 align-top">21 March 2026, 2:14</td>
+<td class="border-r border-outline-variant/30 px-4 py-6 align-top break-all">jimmy.w.xu84@gmail.com</td>
+<td class="border-r border-outline-variant/30 px-4 py-6 align-top">97977392</td>
+<td class="px-4 py-6 align-top whitespace-pre-line leading-relaxed">Employer Requirement:
+Nationality: Filipino
+Type: Transfer Maid
+Duty: Taking care of young children
+Language: English</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Bottom Pagination Bar -->
+<div class="bg-surface-container-low px-4 py-3 flex items-center justify-center relative">
+<div class="flex items-center gap-1">
+<span class="pagination-link active">1</span>
+<a class="pagination-link" href="#">2</a>
+<a class="pagination-link" href="#">3</a>
+<a class="pagination-link" href="#">4</a>
+<a class="pagination-link" href="#">5</a>
+<a class="pagination-link" href="#">6</a>
+<a class="pagination-link" href="#">7</a>
+<a class="pagination-link" href="#">8</a>
+<a class="pagination-link" href="#">9</a>
+<a class="pagination-link" href="#">10</a>
+<a class="pagination-link" href="#">11</a>
+<a class="pagination-link" href="#">12</a>
+<a class="pagination-link" href="#">13</a>
+<a class="pagination-link" href="#">14</a>
+<a class="pagination-link" href="#">15</a>
+<a class="pagination-link" href="#">16</a>
+<a class="pagination-link" href="#">17</a>
+<a class="pagination-link" href="#">18</a>
+<a class="pagination-link" href="#">19</a>
+<a class="pagination-link" href="#">20</a>
+</div>
+<button class="absolute right-4 bg-primary text-white font-bold py-1 px-4 rounded shadow-sm hover:bg-primary-container transition-colors text-sm">Next</button>
+</div>
+</div>
+<!-- Secondary Content Section: Summary Bento (Kept for styling consistency) -->
+<div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-primary-container p-8 rounded-xl text-on-primary-container">
+<h3 class="font-headline text-2xl font-extrabold mb-2">New Growth</h3>
+<p class="text-primary-fixed text-sm mb-6 opacity-90">Your agency's enquiry rate has increased by 14% this month.</p>
+<div class="flex items-end gap-1">
+<span class="text-4xl font-extrabold">+12</span>
+<span class="text-xs font-bold uppercase tracking-wider mb-1">New Leads Today</span>
+</div>
+</div>
+<div class="bg-secondary-container p-8 rounded-xl text-on-secondary-container md:col-span-2 flex flex-col justify-between">
+<div>
+<h3 class="font-headline text-2xl font-extrabold mb-2">Recent Success</h3>
+<p class="text-on-secondary-container/80 text-sm max-w-sm">Top performing service category this week is <span class="font-bold underline">Elderly Care</span> with a 92% conversion rate.</p>
+</div>
+<div class="mt-6 flex gap-4">
+<div class="h-1 bg-on-secondary-container/20 flex-1 rounded-full overflow-hidden">
+<div class="h-full bg-on-secondary-container w-[92%]"></div>
+</div>
+<span class="text-xs font-bold">92%</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Space -->
+<footer class="mt-24 border-t border-emerald-100/20 py-12 px-6 bg-surface-container-low">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+<div class="font-headline font-extrabold tracking-tighter text-emerald-900 text-lg">
+                Veridian <span class="text-secondary">Maid Services</span>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-xs font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-xs font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Use</a>
+<a class="text-xs font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Support</a>
+</div>
+<div class="text-xs text-on-surface-variant font-medium">
+                © Copyright STREET PTE LTD. 2005-2026. All Rights Reserved.
+            </div>
+</div>
+</footer>
+</body></html>
